@@ -68,6 +68,31 @@ DAMAGE_KEYWORDS = {
     "trickshot", "artillerist", "multistriker", "blaster"
 }
 
+# Traits that provide team-wide buffs (benefit ALL allies, not just holders)
+TEAM_BUFF_TRAITS = {
+    # Classes: "Your team gains ..."
+    "Arcanist", "Bruiser", "Defender", "Invoker", "Quickstriker",
+    # Origins with significant team-wide effects
+    "Demacia", "Dragonborn", "Freljord", "Harvester", "Ionia",
+    "Noxus", "Shurima", "Soulbound", "Void", "Yordle", "Zaun",
+    "Riftscourge", "Piltover",
+}
+
+# Special champions only viable with specific trait synergies active
+SPECIAL_CHAMPION_SYNERGIES = {
+    "Zaahen": {"Ionia", "Demacia"},
+    "Aurelion Sol": {"Targon", "Arcanist"},
+    "Baron Nashor": {"Void"},
+}
+SPECIAL_CHAMPION_MIN_LEVEL = {
+    "Baron Nashor": 10,
+}
+
+CARRY_TRAIT_BONUS = 5.0
+TEAM_BUFF_BONUS = 4.0
+IRRELEVANT_TRAIT_PENALTY = 2.0
+SPECIAL_NO_SYNERGY_PENALTY = 25.0
+
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
@@ -140,6 +165,8 @@ class SearchConfig:
     dump_meta: bool = False
     dump_champions: bool = False
     dump_traits: bool = False
+    carry: Optional[str] = None
+    carry_traits: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -279,6 +306,39 @@ def infer_role(traits: List[str]) -> str:
     return 'flex'
 
 
+def trait_profile_key(champion: Champion) -> Tuple[str, ...]:
+    return tuple(sorted(champion.traits))
+
+
+def prefer_expensive_equivalents(champions: List[Champion], locked_ids: set[str]) -> List[Champion]:
+    """
+    Keep only the most expensive optional champion per identical trait profile.
+    Included/locked units are never removed.
+    """
+    by_profile: Dict[Tuple[str, ...], List[Champion]] = {}
+    for c in champions:
+        by_profile.setdefault(trait_profile_key(c), []).append(c)
+
+    kept: List[Champion] = []
+    for group in by_profile.values():
+        locked = [c for c in group if c.id in locked_ids]
+        unlocked = [c for c in group if c.id not in locked_ids]
+        kept.extend(locked)
+        if not unlocked:
+            continue
+        max_cost = max(c.cost for c in unlocked)
+        best = [c for c in unlocked if c.cost == max_cost]
+        kept.extend(best)
+
+    # deterministic order for stable search traversal.
+    return sorted(kept, key=lambda c: (c.cost, -len(c.traits), c.name))
+
+
+def is_level_allowed(champion_name: str, level: int) -> bool:
+    min_level = SPECIAL_CHAMPION_MIN_LEVEL.get(champion_name)
+    return min_level is None or level >= min_level
+
+
 def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef]) -> List[Champion]:
     payload = fetch_json(CHAMPS_TEAMPLANNER_URL, refresh)
     if isinstance(payload, dict):
@@ -375,7 +435,7 @@ def evaluate_traits(trait_counts: Dict[str, int], trait_defs: Dict[str, TraitDef
             unused_count += 1
             score -= 9.0
         if next_bp is not None and next_bp - cnt == 1:
-            near.append(f"{tr_name} {cnt}→{next_bp}")
+            near.append(f"{tr_name} {cnt}->{next_bp}")
             score += 4.0
     score -= leftover_units * 1.5
     return active, near, unused, unused_count, leftover_units, score
@@ -386,6 +446,55 @@ def effective_role_counts(state: State) -> Tuple[float, float, float]:
     eff_damage = state.damage_count + 0.5 * state.flex_count
     diff = abs(eff_tank - eff_damage)
     return eff_tank, eff_damage, diff
+
+
+def _trait_is_active(cnt: int, tdef: TraitDef) -> bool:
+    return tdef.breakpoints and cnt >= tdef.breakpoints[0]
+
+
+def carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:
+    """Score bonus/penalty for carry synergy and special champion restrictions."""
+    bonus = 0.0
+
+    # --- Carry scoring ---
+    if cfg.carry_traits:
+        carry_set = set(cfg.carry_traits)
+        for tr_name, cnt in state.trait_counts.items():
+            tdef = trait_defs.get(tr_name)
+            if not tdef or cnt <= 0:
+                continue
+            if not _trait_is_active(cnt, tdef):
+                continue
+            is_carry = tr_name in carry_set
+            is_buff = tr_name in TEAM_BUFF_TRAITS
+            if is_carry:
+                # Whitelist: carry's own trait (even if also team buff, count once)
+                bonus += CARRY_TRAIT_BONUS
+            elif is_buff:
+                bonus += TEAM_BUFF_BONUS
+            else:
+                bonus -= IRRELEVANT_TRAIT_PENALTY
+
+    # --- Special champion penalties (always active) ---
+    for unit in state.units:
+        min_level = SPECIAL_CHAMPION_MIN_LEVEL.get(unit.name)
+        if min_level is not None and cfg.level < min_level:
+            bonus -= SPECIAL_NO_SYNERGY_PENALTY
+            continue
+        required = SPECIAL_CHAMPION_SYNERGIES.get(unit.name)
+        if required is None:
+            continue
+        has_synergy = False
+        for tr in required:
+            cnt = state.trait_counts.get(tr, 0)
+            tdef = trait_defs.get(tr)
+            if tdef and _trait_is_active(cnt, tdef):
+                has_synergy = True
+                break
+        if not has_synergy:
+            bonus -= SPECIAL_NO_SYNERGY_PENALTY
+
+    return bonus
 
 
 def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:
@@ -399,13 +508,15 @@ def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: Sea
     score -= max(0.0, cfg.min_damage - eff_damage) * 3.5
     if unused_count > cfg.max_unused_traits:
         score -= 20 * (unused_count - cfg.max_unused_traits)
+    # carry bonus + special champion penalties
+    score += carry_and_special_bonus(state, trait_defs, cfg)
     return score
 
 
 def state_sort_key(result: dict, sort_by: str):
     if sort_by == 'cost':
         return (result['total_cost'], -result['score'], result['champion_names'])
-    return (-result['score'], result['total_cost'], result['champion_names'])
+    return (-result['score'], -result['total_cost'], result['champion_names'])
 
 
 def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:
@@ -419,13 +530,31 @@ def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig
         return False
     if diff > cfg.max_role_diff:
         return False
+    # Special champions must have at least one required trait active
+    for unit in state.units:
+        min_level = SPECIAL_CHAMPION_MIN_LEVEL.get(unit.name)
+        if min_level is not None and cfg.level < min_level:
+            return False
+        required = SPECIAL_CHAMPION_SYNERGIES.get(unit.name)
+        if required is None:
+            continue
+        has_synergy = False
+        for tr in required:
+            cnt = state.trait_counts.get(tr, 0)
+            tdef = trait_defs.get(tr)
+            if tdef and _trait_is_active(cnt, tdef):
+                has_synergy = True
+                break
+        if not has_synergy:
+            return False
     return True
 
 
 def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> dict:
     active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
     eff_tank, eff_damage, diff = effective_role_counts(state)
-    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight
+    cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)
+    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus
     return {
         'score': round(score, 2),
         'total_cost': state.total_cost,
@@ -456,6 +585,8 @@ def search(champions: List[Champion], trait_defs: Dict[str, TraitDef], cfg: Sear
         if key not in champ_by_name:
             raise RuntimeError(f"Unknown unit: {raw}")
         c = champ_by_name[key]
+        if not is_level_allowed(c.name, cfg.level):
+            raise RuntimeError(f"Unit {c.name} requires level {SPECIAL_CHAMPION_MIN_LEVEL[c.name]}+")
         if c.cost in cfg.exclude_costs:
             raise RuntimeError(f"Included unit {c.name} is excluded by cost filter")
         if c.id not in used_ids:
@@ -465,9 +596,12 @@ def search(champions: List[Champion], trait_defs: Dict[str, TraitDef], cfg: Sear
         raise RuntimeError("More included units than level")
 
     # Only search over optional units; included units are fixed in every state.
-    pool = [c for c in champions if c.cost not in cfg.exclude_costs and c.id not in used_ids]
-    # sort by cheap + more traits first to help beam search
-    pool = sorted(pool, key=lambda c: (c.cost, -len(c.traits), c.name))
+    pool = [
+        c for c in champions
+        if c.cost not in cfg.exclude_costs and c.id not in used_ids and is_level_allowed(c.name, cfg.level)
+    ]
+    # For champions with identical trait profiles, prefer the pricier option.
+    pool = prefer_expensive_equivalents(pool, locked_ids=used_ids)
 
     init_trait_counts: Dict[str, int] = {}
     tank = damage = flex = total_cost = 0
@@ -521,7 +655,7 @@ def search(champions: List[Champion], trait_defs: Dict[str, TraitDef], cfg: Sear
                 )
                 ns.score_estimate = estimate_state_score(ns, trait_defs, cfg)
                 next_states.append(ns)
-        states = sorted(next_states, key=lambda s: (-s.score_estimate, s.total_cost))[:cfg.beam_width]
+        states = sorted(next_states, key=lambda s: (-s.score_estimate, -s.total_cost))[:cfg.beam_width]
         if not states:
             break
 
@@ -536,6 +670,8 @@ def search(champions: List[Champion], trait_defs: Dict[str, TraitDef], cfg: Sear
 def print_text_results(results: List[dict], meta: dict):
     print(f"Set: {meta['set_display_name']} ({meta['set_name']})")
     print(f"Champions: {meta['champion_count']} | Traits: {meta['trait_count']}")
+    if meta.get('carry'):
+        print(f"Carry: {meta['carry']} (traits: {', '.join(meta.get('carry_traits', []))})")
     if not results:
         print("No results matched the constraints.")
         return
@@ -557,6 +693,7 @@ def parse_args() -> SearchConfig:
     p = argparse.ArgumentParser(description="Find TFT perfect-synergy comps using CommunityDragon JSON only.")
     p.add_argument('--refresh', action='store_true')
     p.add_argument('--level', type=int, required=True)
+    p.add_argument('--carry', type=str, default='', help='Main carry champion (auto-included, gets synergy bonus)')
     p.add_argument('--include-units', type=str, default='')
     p.add_argument('--exclude-costs', type=str, default='')
     p.add_argument('--max-unused-traits', type=int, default=99)
@@ -593,6 +730,7 @@ def parse_args() -> SearchConfig:
         dump_meta=args.dump_meta,
         dump_champions=args.dump_champions,
         dump_traits=args.dump_traits,
+        carry=titleish(args.carry) if args.carry.strip() else None,
     ), args.refresh
 
 
@@ -616,6 +754,19 @@ def main() -> int:
         }
         if cfg.trait_plus1 and cfg.trait_plus1 not in traits:
             raise RuntimeError(f"Unknown trait: {cfg.trait_plus1}")
+
+        # Resolve carry champion
+        if cfg.carry:
+            carry_key = normalize_text(cfg.carry)
+            carry_champ = next((c for c in champs if c.id == carry_key), None)
+            if not carry_champ:
+                raise RuntimeError(f"Unknown carry: {cfg.carry}")
+            cfg.carry_traits = list(carry_champ.traits)
+            # Auto-include carry if not already in include list
+            if carry_key not in {normalize_text(u) for u in cfg.include_units}:
+                cfg.include_units.insert(0, carry_champ.name)
+            meta['carry'] = carry_champ.name
+            meta['carry_traits'] = carry_champ.traits
 
         if cfg.dump_meta:
             print(json.dumps(meta, indent=2, ensure_ascii=False))
