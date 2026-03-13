@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
+import html as html_lib
 import hashlib
 import json
 import math
@@ -21,6 +22,7 @@ SETS_URL = f"{BASE}/tftsets.json"
 CHAMPS_URL = f"{BASE}/tftchampions.json"
 CHAMPS_TEAMPLANNER_URL = f"{BASE}/tftchampions-teamplanner.json"
 TRAITS_URL = f"{BASE}/tfttraits.json"
+TACTICS_TOOLS_UNITS_URL = "https://tactics.tools/info/units"
 CACHE_DIR = Path('.tft_synergy_cache')
 CACHE_DIR.mkdir(exist_ok=True)
 
@@ -90,8 +92,11 @@ SPECIAL_CHAMPION_MIN_LEVEL = {
 
 CARRY_TRAIT_BONUS = 5.0
 TEAM_BUFF_BONUS = 4.0
+CARRY_TEAM_BUFF_STACK_BONUS = 5.0
 IRRELEVANT_TRAIT_PENALTY = 2.0
 SPECIAL_NO_SYNERGY_PENALTY = 25.0
+OFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0
+OFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5
 
 
 def eprint(*args, **kwargs):
@@ -111,10 +116,15 @@ def titleish(s: str) -> str:
 
 
 def fetch_json(url: str, refresh: bool) -> object:
+    body = fetch_text(url, refresh, suffix='.json')
+    return json.loads(body)
+
+
+def fetch_text(url: str, refresh: bool, suffix: str = '.txt') -> str:
     digest = hashlib.sha1(url.encode()).hexdigest()[:16]
-    cache_path = CACHE_DIR / f"{digest}.json"
+    cache_path = CACHE_DIR / f"{digest}{suffix}"
     if cache_path.exists() and not refresh:
-        return json.loads(cache_path.read_text(encoding='utf-8'))
+        return cache_path.read_text(encoding='utf-8')
     last_err = None
     for i in range(RETRIES):
         try:
@@ -122,7 +132,7 @@ def fetch_json(url: str, refresh: bool) -> object:
             with urlopen(req, timeout=TIMEOUT) as resp:
                 body = resp.read().decode('utf-8')
             cache_path.write_text(body, encoding='utf-8')
-            return json.loads(body)
+            return body
         except (URLError, HTTPError, TimeoutError, json.JSONDecodeError) as err:
             last_err = err
             time.sleep(1.2 * (i + 1))
@@ -145,6 +155,8 @@ class Champion:
     raw_cost: int
     traits: List[str]
     role: str
+    unit_archetype: Optional[str] = None
+    damage_profile: Optional[str] = None
 
 
 @dataclass
@@ -167,6 +179,7 @@ class SearchConfig:
     dump_traits: bool = False
     carry: Optional[str] = None
     carry_traits: List[str] = field(default_factory=list)
+    carry_damage_profile: Optional[str] = None
 
 
 @dataclass
@@ -306,6 +319,44 @@ def infer_role(traits: List[str]) -> str:
     return 'flex'
 
 
+def damage_profile_from_archetype(archetype: str) -> Optional[str]:
+    family = archetype.split(' ', 1)[0].lower()
+    return family if family in {'attack', 'magic', 'hybrid'} else None
+
+
+def role_from_unit_archetype(archetype: str) -> Optional[str]:
+    """
+    Map tactics.tools combat archetypes onto our search roles.
+    """
+    parts = archetype.split(' ', 1)
+    subtype = parts[1].lower() if len(parts) == 2 else ''
+    if subtype in {'caster', 'marksman', 'assassin', 'specialist'}:
+        return 'damage'
+    if subtype == 'tank':
+        return 'tank'
+    if subtype == 'fighter':
+        return 'flex'
+    return None
+
+
+def load_unit_archetypes(refresh: bool) -> Dict[str, str]:
+    """
+    Load unit archetypes from tactics.tools.
+    Returns normalized-name -> archetype string, e.g. "Magic Caster".
+    """
+    html = fetch_text(TACTICS_TOOLS_UNITS_URL, refresh)
+    pattern = re.compile(
+        r'href="/info/units/[^"]+".*?font-montserrat font-semibold[^>]*>([^<]+)<div.*?'
+        r'self-start">([^<]+)</div>',
+        re.S,
+    )
+    out: Dict[str, str] = {}
+    for raw_name, archetype in pattern.findall(html):
+        name = titleish(html_lib.unescape(raw_name))
+        out[normalize_text(name)] = titleish(archetype)
+    return out
+
+
 def trait_profile_key(champion: Champion) -> Tuple[str, ...]:
     return tuple(sorted(champion.traits))
 
@@ -339,7 +390,7 @@ def is_level_allowed(champion_name: str, level: int) -> bool:
     return min_level is None or level >= min_level
 
 
-def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef]) -> List[Champion]:
+def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef], unit_archetypes: Dict[str, str]) -> List[Champion]:
     payload = fetch_json(CHAMPS_TEAMPLANNER_URL, refresh)
     if isinstance(payload, dict):
         set_key = f"TFTSet{set_num}" if set_num else ""
@@ -384,7 +435,10 @@ def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef]) -> 
             continue
         seen_names.add(name)
         api_name = str(record.get('apiName') or record.get('mCharacterName') or record.get('character_id') or item.get('name') or '')
-        role = infer_role(display_traits)
+        archetype = unit_archetypes.get(normalize_text(name))
+        role = role_from_unit_archetype(archetype) if archetype else None
+        if role is None:
+            role = infer_role(display_traits)
         out.append(Champion(
             id=normalize_text(name),
             api_name=api_name,
@@ -393,6 +447,8 @@ def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef]) -> 
             raw_cost=raw_cost,
             traits=display_traits,
             role=role,
+            unit_archetype=archetype,
+            damage_profile=damage_profile_from_archetype(archetype) if archetype else None,
         ))
     # pragmatic validation: Set 16 is very large, but exact count can fluctuate if CDragon schema shifts.
     if len(out) < 50:
@@ -467,8 +523,10 @@ def carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: 
                 continue
             is_carry = tr_name in carry_set
             is_buff = tr_name in TEAM_BUFF_TRAITS
-            if is_carry:
-                # Whitelist: carry's own trait (even if also team buff, count once)
+            if is_carry and is_buff:
+                # A carry trait that also buffs the full team should stand out clearly.
+                bonus += CARRY_TRAIT_BONUS + TEAM_BUFF_BONUS + CARRY_TEAM_BUFF_STACK_BONUS
+            elif is_carry:
                 bonus += CARRY_TRAIT_BONUS
             elif is_buff:
                 bonus += TEAM_BUFF_BONUS
@@ -497,6 +555,27 @@ def carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: 
     return bonus
 
 
+def off_profile_damage_penalty(state: State, cfg: SearchConfig) -> float:
+    """
+    Penalize extra magic-damage carries when the chosen carry is attack-based.
+    Tanks and flex units are intentionally ignored.
+    """
+    if cfg.carry_damage_profile != 'attack' or not cfg.carry:
+        return 0.0
+
+    penalty = 0.0
+    carry_id = normalize_text(cfg.carry)
+    for unit in state.units:
+        if unit.id == carry_id:
+            continue
+        if unit.role != 'damage':
+            continue
+        if unit.damage_profile != 'magic':
+            continue
+        penalty += OFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY + unit.cost * OFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT
+    return penalty
+
+
 def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:
     _, _, _, unused_count, _, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
     eff_tank, eff_damage, diff = effective_role_counts(state)
@@ -510,6 +589,7 @@ def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: Sea
         score -= 20 * (unused_count - cfg.max_unused_traits)
     # carry bonus + special champion penalties
     score += carry_and_special_bonus(state, trait_defs, cfg)
+    score -= off_profile_damage_penalty(state, cfg)
     return score
 
 
@@ -554,7 +634,8 @@ def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfi
     active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
     eff_tank, eff_damage, diff = effective_role_counts(state)
     cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)
-    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus
+    off_profile_penalty = off_profile_damage_penalty(state, cfg)
+    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus - off_profile_penalty
     return {
         'score': round(score, 2),
         'total_cost': state.total_cost,
@@ -573,6 +654,7 @@ def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfi
         'unused_traits': unused,
         'unused_trait_count': unused_count,
         'leftover_units': leftover_units,
+        'off_profile_damage_penalty': round(off_profile_penalty, 2),
     }
 
 
@@ -739,17 +821,24 @@ def main() -> int:
     try:
         set_name, set_display_name, set_num = pick_current_set(fetch_json(SETS_URL, refresh))
         traits = load_traits(refresh, set_num)
-        champs = load_champions(refresh, set_num, traits)
+        try:
+            unit_archetypes = load_unit_archetypes(refresh)
+        except Exception as err:
+            eprint(f"WARNING: Failed to load unit archetypes from tactics.tools: {err}")
+            unit_archetypes = {}
+        champs = load_champions(refresh, set_num, traits, unit_archetypes)
         meta = {
             'set_name': set_name,
             'set_display_name': set_display_name,
             'set_number': set_num,
             'champion_count': len(champs),
             'trait_count': len(traits),
+            'unit_archetype_count': len(unit_archetypes),
             'sources': {
                 'sets': SETS_URL,
                 'champions': CHAMPS_TEAMPLANNER_URL,
                 'traits': TRAITS_URL,
+                'unit_archetypes': TACTICS_TOOLS_UNITS_URL,
             }
         }
         if cfg.trait_plus1 and cfg.trait_plus1 not in traits:
@@ -762,11 +851,13 @@ def main() -> int:
             if not carry_champ:
                 raise RuntimeError(f"Unknown carry: {cfg.carry}")
             cfg.carry_traits = list(carry_champ.traits)
+            cfg.carry_damage_profile = carry_champ.damage_profile
             # Auto-include carry if not already in include list
             if carry_key not in {normalize_text(u) for u in cfg.include_units}:
                 cfg.include_units.insert(0, carry_champ.name)
             meta['carry'] = carry_champ.name
             meta['carry_traits'] = carry_champ.traits
+            meta['carry_damage_profile'] = carry_champ.damage_profile
 
         if cfg.dump_meta:
             print(json.dumps(meta, indent=2, ensure_ascii=False))

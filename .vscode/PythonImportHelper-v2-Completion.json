@@ -1,0 +1,701 @@
+[
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "dataclasses",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "html",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "html",
+        "description": "html",
+        "detail": "html",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "unicodedata",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unicodedata",
+        "description": "unicodedata",
+        "detail": "unicodedata",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "URLError",
+        "importPath": "urllib.error",
+        "description": "urllib.error",
+        "isExtraImport": true,
+        "detail": "urllib.error",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPError",
+        "importPath": "urllib.error",
+        "description": "urllib.error",
+        "isExtraImport": true,
+        "detail": "urllib.error",
+        "documentation": {}
+    },
+    {
+        "label": "urlopen",
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "isExtraImport": true,
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "isExtraImport": true,
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "TraitDef",
+        "kind": 6,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "class TraitDef:\n    id: str\n    name: str\n    breakpoints: List[int]\n@dataclass\nclass Champion:\n    id: str\n    api_name: str\n    name: str\n    cost: int",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "Champion",
+        "kind": 6,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "class Champion:\n    id: str\n    api_name: str\n    name: str\n    cost: int\n    raw_cost: int\n    traits: List[str]\n    role: str\n    unit_archetype: Optional[str] = None\n    damage_profile: Optional[str] = None",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "SearchConfig",
+        "kind": 6,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "class SearchConfig:\n    level: int\n    include_units: List[str] = field(default_factory=list)\n    exclude_costs: List[int] = field(default_factory=list)\n    max_unused_traits: int = 99\n    trait_plus1: Optional[str] = None\n    sort_by: str = \"score\"\n    limit: int = 20\n    beam_width: int = 500\n    min_tanks: int = 2",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "kind": 6,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "class State:\n    units: Tuple[Champion, ...]\n    next_idx: int\n    trait_counts: Dict[str, int]\n    total_cost: int\n    tank_count: int\n    damage_count: int\n    flex_count: int\n    score_estimate: float\ndef pick_current_set(sets_payload: object) -> Tuple[str, str, str]:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "eprint",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()\n    s = re.sub(r\"[^a-z0-9]+\", \"\", s)\n    return s\ndef titleish(s: str) -> str:\n    return re.sub(r\"\\s+\", \" \", s).strip()",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_text",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()\n    s = re.sub(r\"[^a-z0-9]+\", \"\", s)\n    return s\ndef titleish(s: str) -> str:\n    return re.sub(r\"\\s+\", \" \", s).strip()\ndef fetch_json(url: str, refresh: bool) -> object:\n    body = fetch_text(url, refresh, suffix='.json')",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "titleish",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def titleish(s: str) -> str:\n    return re.sub(r\"\\s+\", \" \", s).strip()\ndef fetch_json(url: str, refresh: bool) -> object:\n    body = fetch_text(url, refresh, suffix='.json')\n    return json.loads(body)\ndef fetch_text(url: str, refresh: bool, suffix: str = '.txt') -> str:\n    digest = hashlib.sha1(url.encode()).hexdigest()[:16]\n    cache_path = CACHE_DIR / f\"{digest}{suffix}\"\n    if cache_path.exists() and not refresh:\n        return cache_path.read_text(encoding='utf-8')",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_json",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def fetch_json(url: str, refresh: bool) -> object:\n    body = fetch_text(url, refresh, suffix='.json')\n    return json.loads(body)\ndef fetch_text(url: str, refresh: bool, suffix: str = '.txt') -> str:\n    digest = hashlib.sha1(url.encode()).hexdigest()[:16]\n    cache_path = CACHE_DIR / f\"{digest}{suffix}\"\n    if cache_path.exists() and not refresh:\n        return cache_path.read_text(encoding='utf-8')\n    last_err = None\n    for i in range(RETRIES):",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_text",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def fetch_text(url: str, refresh: bool, suffix: str = '.txt') -> str:\n    digest = hashlib.sha1(url.encode()).hexdigest()[:16]\n    cache_path = CACHE_DIR / f\"{digest}{suffix}\"\n    if cache_path.exists() and not refresh:\n        return cache_path.read_text(encoding='utf-8')\n    last_err = None\n    for i in range(RETRIES):\n        try:\n            req = Request(url, headers=HEADERS)\n            with urlopen(req, timeout=TIMEOUT) as resp:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "pick_current_set",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def pick_current_set(sets_payload: object) -> Tuple[str, str, str]:\n    current: Optional[dict] = None\n    candidates: List[dict] = []\n    if isinstance(sets_payload, list):\n        candidates = [item for item in sets_payload if isinstance(item, dict)]\n    elif isinstance(sets_payload, dict):\n        candidates = [sets_payload]\n        mode_data = sets_payload.get('LCTFTModeData')\n        if isinstance(mode_data, dict):\n            default_set = mode_data.get('mDefaultSet')",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "load_traits",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def load_traits(refresh: bool, set_num: str) -> Dict[str, TraitDef]:\n    payload = fetch_json(TRAITS_URL, refresh)\n    if not isinstance(payload, list):\n        raise RuntimeError(\"Unexpected tfttraits.json format\")\n    out: Dict[str, TraitDef] = {}\n    set_name = f\"TFTSet{set_num}\" if set_num else None\n    prefix = f\"TFT{set_num}_\" if set_num else None\n    for item in payload:\n        if not isinstance(item, dict):\n            continue",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_search_cost",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def normalize_search_cost(cost: int) -> int:\n    return min(max(int(cost), 0), 5) if cost > 0 else 0\ndef is_playable_champion(item: dict, set_num: str) -> bool:\n    record = item.get('character_record') if isinstance(item.get('character_record'), dict) else item\n    api_name = str(record.get('apiName') or record.get('mCharacterName') or record.get('character_id') or item.get('name') or '')\n    name = titleish(str(record.get('name') or record.get('displayName') or record.get('display_name') or item.get('name') or ''))\n    if not name:\n        return False\n    if name in ALLOWED_SPECIAL_NAMES:\n        return True",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "is_playable_champion",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def is_playable_champion(item: dict, set_num: str) -> bool:\n    record = item.get('character_record') if isinstance(item.get('character_record'), dict) else item\n    api_name = str(record.get('apiName') or record.get('mCharacterName') or record.get('character_id') or item.get('name') or '')\n    name = titleish(str(record.get('name') or record.get('displayName') or record.get('display_name') or item.get('name') or ''))\n    if not name:\n        return False\n    if name in ALLOWED_SPECIAL_NAMES:\n        return True\n    prefix = f\"TFT{set_num}_\"\n    if set_num and api_name and not api_name.startswith(prefix):",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "infer_role",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def infer_role(traits: List[str]) -> str:\n    tset = {normalize_text(t) for t in traits}\n    tank = any(any(k in t for k in TANK_KEYWORDS) for t in tset)\n    dmg = any(any(k in t for k in DAMAGE_KEYWORDS) for t in tset)\n    if tank and dmg:\n        return 'flex'\n    if tank:\n        return 'tank'\n    if dmg:\n        return 'damage'",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "damage_profile_from_archetype",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def damage_profile_from_archetype(archetype: str) -> Optional[str]:\n    family = archetype.split(' ', 1)[0].lower()\n    return family if family in {'attack', 'magic', 'hybrid'} else None\ndef role_from_unit_archetype(archetype: str) -> Optional[str]:\n    \"\"\"\n    Map tactics.tools combat archetypes onto our search roles.\n    \"\"\"\n    parts = archetype.split(' ', 1)\n    subtype = parts[1].lower() if len(parts) == 2 else ''\n    if subtype in {'caster', 'marksman', 'assassin', 'specialist'}:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "role_from_unit_archetype",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def role_from_unit_archetype(archetype: str) -> Optional[str]:\n    \"\"\"\n    Map tactics.tools combat archetypes onto our search roles.\n    \"\"\"\n    parts = archetype.split(' ', 1)\n    subtype = parts[1].lower() if len(parts) == 2 else ''\n    if subtype in {'caster', 'marksman', 'assassin', 'specialist'}:\n        return 'damage'\n    if subtype == 'tank':\n        return 'tank'",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "load_unit_archetypes",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def load_unit_archetypes(refresh: bool) -> Dict[str, str]:\n    \"\"\"\n    Load unit archetypes from tactics.tools.\n    Returns normalized-name -> archetype string, e.g. \"Magic Caster\".\n    \"\"\"\n    html = fetch_text(TACTICS_TOOLS_UNITS_URL, refresh)\n    pattern = re.compile(\n        r'href=\"/info/units/[^\"]+\".*?font-montserrat font-semibold[^>]*>([^<]+)<div.*?'\n        r'self-start\">([^<]+)</div>',\n        re.S,",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "trait_profile_key",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def trait_profile_key(champion: Champion) -> Tuple[str, ...]:\n    return tuple(sorted(champion.traits))\ndef prefer_expensive_equivalents(champions: List[Champion], locked_ids: set[str]) -> List[Champion]:\n    \"\"\"\n    Keep only the most expensive optional champion per identical trait profile.\n    Included/locked units are never removed.\n    \"\"\"\n    by_profile: Dict[Tuple[str, ...], List[Champion]] = {}\n    for c in champions:\n        by_profile.setdefault(trait_profile_key(c), []).append(c)",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "prefer_expensive_equivalents",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def prefer_expensive_equivalents(champions: List[Champion], locked_ids: set[str]) -> List[Champion]:\n    \"\"\"\n    Keep only the most expensive optional champion per identical trait profile.\n    Included/locked units are never removed.\n    \"\"\"\n    by_profile: Dict[Tuple[str, ...], List[Champion]] = {}\n    for c in champions:\n        by_profile.setdefault(trait_profile_key(c), []).append(c)\n    kept: List[Champion] = []\n    for group in by_profile.values():",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "is_level_allowed",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def is_level_allowed(champion_name: str, level: int) -> bool:\n    min_level = SPECIAL_CHAMPION_MIN_LEVEL.get(champion_name)\n    return min_level is None or level >= min_level\ndef load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef], unit_archetypes: Dict[str, str]) -> List[Champion]:\n    payload = fetch_json(CHAMPS_TEAMPLANNER_URL, refresh)\n    if isinstance(payload, dict):\n        set_key = f\"TFTSet{set_num}\" if set_num else \"\"\n        if set_key and isinstance(payload.get(set_key), list):\n            payload = payload[set_key]\n        else:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "load_champions",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def load_champions(refresh: bool, set_num: str, traits: Dict[str, TraitDef], unit_archetypes: Dict[str, str]) -> List[Champion]:\n    payload = fetch_json(CHAMPS_TEAMPLANNER_URL, refresh)\n    if isinstance(payload, dict):\n        set_key = f\"TFTSet{set_num}\" if set_num else \"\"\n        if set_key and isinstance(payload.get(set_key), list):\n            payload = payload[set_key]\n        else:\n            # fallback to the first list payload if the set key isn't present.\n            list_values = [v for v in payload.values() if isinstance(v, list)]\n            payload = list_values[0] if list_values else []",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_traits",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def evaluate_traits(trait_counts: Dict[str, int], trait_defs: Dict[str, TraitDef], trait_plus1: Optional[str]) -> Tuple[List[str], List[str], List[str], int, int, float]:\n    active = []\n    near = []\n    unused = []\n    unused_count = 0\n    leftover_units = 0\n    score = 0.0\n    counts = dict(trait_counts)\n    if trait_plus1:\n        counts[trait_plus1] = counts.get(trait_plus1, 0) + 1",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "effective_role_counts",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def effective_role_counts(state: State) -> Tuple[float, float, float]:\n    eff_tank = state.tank_count + 0.5 * state.flex_count\n    eff_damage = state.damage_count + 0.5 * state.flex_count\n    diff = abs(eff_tank - eff_damage)\n    return eff_tank, eff_damage, diff\ndef _trait_is_active(cnt: int, tdef: TraitDef) -> bool:\n    return tdef.breakpoints and cnt >= tdef.breakpoints[0]\ndef carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    \"\"\"Score bonus/penalty for carry synergy and special champion restrictions.\"\"\"\n    bonus = 0.0",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "carry_and_special_bonus",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    \"\"\"Score bonus/penalty for carry synergy and special champion restrictions.\"\"\"\n    bonus = 0.0\n    # --- Carry scoring ---\n    if cfg.carry_traits:\n        carry_set = set(cfg.carry_traits)\n        for tr_name, cnt in state.trait_counts.items():\n            tdef = trait_defs.get(tr_name)\n            if not tdef or cnt <= 0:\n                continue",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "off_profile_damage_penalty",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def off_profile_damage_penalty(state: State, cfg: SearchConfig) -> float:\n    \"\"\"\n    Penalize extra magic-damage carries when the chosen carry is attack-based.\n    Tanks and flex units are intentionally ignored.\n    \"\"\"\n    if cfg.carry_damage_profile != 'attack' or not cfg.carry:\n        return 0.0\n    penalty = 0.0\n    carry_id = normalize_text(cfg.carry)\n    for unit in state.units:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "estimate_state_score",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    _, _, _, unused_count, _, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    score = trait_score\n    score -= state.total_cost * 0.45\n    score -= diff * cfg.role_balance_weight\n    # light encouragement for minimum role coverage as search develops\n    score -= max(0.0, cfg.min_tanks - eff_tank) * 3.5\n    score -= max(0.0, cfg.min_damage - eff_damage) * 3.5\n    if unused_count > cfg.max_unused_traits:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "state_sort_key",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def state_sort_key(result: dict, sort_by: str):\n    if sort_by == 'cost':\n        return (result['total_cost'], -result['score'], result['champion_names'])\n    return (-result['score'], -result['total_cost'], result['champion_names'])\ndef final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    if eff_tank < cfg.min_tanks:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "final_valid",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    if eff_tank < cfg.min_tanks:\n        return False\n    if eff_damage < cfg.min_damage:\n        return False\n    if diff > cfg.max_role_diff:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "build_result",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> dict:\n    active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)\n    off_profile_penalty = off_profile_damage_penalty(state, cfg)\n    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus - off_profile_penalty\n    return {\n        'score': round(score, 2),\n        'total_cost': state.total_cost,\n        'champion_names': [u.name for u in state.units],",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def search(champions: List[Champion], trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> List[dict]:\n    champ_by_name = {normalize_text(c.name): c for c in champions}\n    include_units = []\n    used_ids = set()\n    for raw in cfg.include_units:\n        key = normalize_text(raw)\n        if key not in champ_by_name:\n            raise RuntimeError(f\"Unknown unit: {raw}\")\n        c = champ_by_name[key]\n        if not is_level_allowed(c.name, cfg.level):",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "print_text_results",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def print_text_results(results: List[dict], meta: dict):\n    print(f\"Set: {meta['set_display_name']} ({meta['set_name']})\")\n    print(f\"Champions: {meta['champion_count']} | Traits: {meta['trait_count']}\")\n    if meta.get('carry'):\n        print(f\"Carry: {meta['carry']} (traits: {', '.join(meta.get('carry_traits', []))})\")\n    if not results:\n        print(\"No results matched the constraints.\")\n        return\n    for i, r in enumerate(results, 1):\n        print()",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def parse_args() -> SearchConfig:\n    p = argparse.ArgumentParser(description=\"Find TFT perfect-synergy comps using CommunityDragon JSON only.\")\n    p.add_argument('--refresh', action='store_true')\n    p.add_argument('--level', type=int, required=True)\n    p.add_argument('--carry', type=str, default='', help='Main carry champion (auto-included, gets synergy bonus)')\n    p.add_argument('--include-units', type=str, default='')\n    p.add_argument('--exclude-costs', type=str, default='')\n    p.add_argument('--max-unused-traits', type=int, default=99)\n    p.add_argument('--trait-plus1', type=str, default='')\n    p.add_argument('--sort-by', choices=['score', 'cost'], default='score')",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def main() -> int:\n    cfg, refresh = parse_args()\n    try:\n        set_name, set_display_name, set_num = pick_current_set(fetch_json(SETS_URL, refresh))\n        traits = load_traits(refresh, set_num)\n        try:\n            unit_archetypes = load_unit_archetypes(refresh)\n        except Exception as err:\n            eprint(f\"WARNING: Failed to load unit archetypes from tactics.tools: {err}\")\n            unit_archetypes = {}",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "BASE",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "BASE = \"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1\"\nSETS_URL = f\"{BASE}/tftsets.json\"\nCHAMPS_URL = f\"{BASE}/tftchampions.json\"\nCHAMPS_TEAMPLANNER_URL = f\"{BASE}/tftchampions-teamplanner.json\"\nTRAITS_URL = f\"{BASE}/tfttraits.json\"\nTACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "SETS_URL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "SETS_URL = f\"{BASE}/tftsets.json\"\nCHAMPS_URL = f\"{BASE}/tftchampions.json\"\nCHAMPS_TEAMPLANNER_URL = f\"{BASE}/tftchampions-teamplanner.json\"\nTRAITS_URL = f\"{BASE}/tfttraits.json\"\nTACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "CHAMPS_URL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "CHAMPS_URL = f\"{BASE}/tftchampions.json\"\nCHAMPS_TEAMPLANNER_URL = f\"{BASE}/tftchampions-teamplanner.json\"\nTRAITS_URL = f\"{BASE}/tfttraits.json\"\nTACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "CHAMPS_TEAMPLANNER_URL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "CHAMPS_TEAMPLANNER_URL = f\"{BASE}/tftchampions-teamplanner.json\"\nTRAITS_URL = f\"{BASE}/tfttraits.json\"\nTACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TRAITS_URL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TRAITS_URL = f\"{BASE}/tfttraits.json\"\nTACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TACTICS_TOOLS_UNITS_URL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TACTICS_TOOLS_UNITS_URL = \"https://tactics.tools/info/units\"\nCACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "CACHE_DIR",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "CACHE_DIR = Path('.tft_synergy_cache')\nCACHE_DIR.mkdir(exist_ok=True)\nHEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",\n    r\"TrainingDummy\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "HEADERS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "HEADERS = {\"User-Agent\": \"Mozilla/5.0\"}\nTIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",\n    r\"TrainingDummy\",\n    r\"TargetDummy\",\n    r\"GangplankBarrel\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TIMEOUT",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TIMEOUT = 25\nRETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",\n    r\"TrainingDummy\",\n    r\"TargetDummy\",\n    r\"GangplankBarrel\",\n    r\"Tibbers\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "RETRIES",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "RETRIES = 3\n# Heuristics for filtering playable units from CommunityDragon.\nBANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",\n    r\"TrainingDummy\",\n    r\"TargetDummy\",\n    r\"GangplankBarrel\",\n    r\"Tibbers\",\n    r\"MechPilot\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "BANNED_NAME_PATTERNS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "BANNED_NAME_PATTERNS = [\n    r\"^TFT\\d+_PVE_\",\n    r\"^TFTTutorial\",\n    r\"TrainingDummy\",\n    r\"TargetDummy\",\n    r\"GangplankBarrel\",\n    r\"Tibbers\",\n    r\"MechPilot\",\n    r\"Turret\",\n    r\"Tentacle\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_SPECIAL_NAMES",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "ALLOWED_SPECIAL_NAMES = {\n    # Keep a small allowlist for special but legitimate boardable/unlockable units.\n    \"Baron Nashor\",\n}\nTANK_KEYWORDS = {\n    \"bastion\", \"bruiser\", \"warden\", \"juggernaut\", \"guardian\", \"sentinel\",\n    \"behemoth\", \"vanguard\", \"protector\", \"knight\", \"defender\"\n}\nDAMAGE_KEYWORDS = {\n    \"sorcerer\", \"sniper\", \"invoker\", \"challenger\", \"assassin\", \"marksman\",",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TANK_KEYWORDS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TANK_KEYWORDS = {\n    \"bastion\", \"bruiser\", \"warden\", \"juggernaut\", \"guardian\", \"sentinel\",\n    \"behemoth\", \"vanguard\", \"protector\", \"knight\", \"defender\"\n}\nDAMAGE_KEYWORDS = {\n    \"sorcerer\", \"sniper\", \"invoker\", \"challenger\", \"assassin\", \"marksman\",\n    \"gunslinger\", \"slayer\", \"duelist\", \"reaper\", \"carry\", \"arcanist\",\n    \"trickshot\", \"artillerist\", \"multistriker\", \"blaster\"\n}\n# Traits that provide team-wide buffs (benefit ALL allies, not just holders)",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "DAMAGE_KEYWORDS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "DAMAGE_KEYWORDS = {\n    \"sorcerer\", \"sniper\", \"invoker\", \"challenger\", \"assassin\", \"marksman\",\n    \"gunslinger\", \"slayer\", \"duelist\", \"reaper\", \"carry\", \"arcanist\",\n    \"trickshot\", \"artillerist\", \"multistriker\", \"blaster\"\n}\n# Traits that provide team-wide buffs (benefit ALL allies, not just holders)\nTEAM_BUFF_TRAITS = {\n    # Classes: \"Your team gains ...\"\n    \"Arcanist\", \"Bruiser\", \"Defender\", \"Invoker\", \"Quickstriker\",\n    # Origins with significant team-wide effects",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TEAM_BUFF_TRAITS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TEAM_BUFF_TRAITS = {\n    # Classes: \"Your team gains ...\"\n    \"Arcanist\", \"Bruiser\", \"Defender\", \"Invoker\", \"Quickstriker\",\n    # Origins with significant team-wide effects\n    \"Demacia\", \"Dragonborn\", \"Freljord\", \"Harvester\", \"Ionia\",\n    \"Noxus\", \"Shurima\", \"Soulbound\", \"Void\", \"Yordle\", \"Zaun\",\n    \"Riftscourge\", \"Piltover\",\n}\n# Special champions only viable with specific trait synergies active\nSPECIAL_CHAMPION_SYNERGIES = {",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "SPECIAL_CHAMPION_SYNERGIES",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "SPECIAL_CHAMPION_SYNERGIES = {\n    \"Zaahen\": {\"Ionia\", \"Demacia\"},\n    \"Aurelion Sol\": {\"Targon\", \"Arcanist\"},\n    \"Baron Nashor\": {\"Void\"},\n}\nSPECIAL_CHAMPION_MIN_LEVEL = {\n    \"Baron Nashor\": 10,\n}\nCARRY_TRAIT_BONUS = 5.0\nTEAM_BUFF_BONUS = 4.0",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "SPECIAL_CHAMPION_MIN_LEVEL",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "SPECIAL_CHAMPION_MIN_LEVEL = {\n    \"Baron Nashor\": 10,\n}\nCARRY_TRAIT_BONUS = 5.0\nTEAM_BUFF_BONUS = 4.0\nCARRY_TEAM_BUFF_STACK_BONUS = 5.0\nIRRELEVANT_TRAIT_PENALTY = 2.0\nSPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "CARRY_TRAIT_BONUS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "CARRY_TRAIT_BONUS = 5.0\nTEAM_BUFF_BONUS = 4.0\nCARRY_TEAM_BUFF_STACK_BONUS = 5.0\nIRRELEVANT_TRAIT_PENALTY = 2.0\nSPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "TEAM_BUFF_BONUS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "TEAM_BUFF_BONUS = 4.0\nCARRY_TEAM_BUFF_STACK_BONUS = 5.0\nIRRELEVANT_TRAIT_PENALTY = 2.0\nSPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "CARRY_TEAM_BUFF_STACK_BONUS",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "CARRY_TEAM_BUFF_STACK_BONUS = 5.0\nIRRELEVANT_TRAIT_PENALTY = 2.0\nSPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "IRRELEVANT_TRAIT_PENALTY",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "IRRELEVANT_TRAIT_PENALTY = 2.0\nSPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "SPECIAL_NO_SYNERGY_PENALTY",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "SPECIAL_NO_SYNERGY_PENALTY = 25.0\nOFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()\n    s = re.sub(r\"[^a-z0-9]+\", \"\", s)",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "OFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "OFF_PROFILE_MAGIC_DAMAGE_BASE_PENALTY = 2.0\nOFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()\n    s = re.sub(r\"[^a-z0-9]+\", \"\", s)\n    return s",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "OFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT",
+        "kind": 5,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "OFF_PROFILE_MAGIC_DAMAGE_COST_WEIGHT = 1.5\ndef eprint(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\ndef normalize_text(s: str) -> str:\n    s = unicodedata.normalize('NFKD', s)\n    s = ''.join(c for c in s if not unicodedata.combining(c))\n    s = s.lower().strip()\n    s = re.sub(r\"[^a-z0-9]+\", \"\", s)\n    return s\ndef titleish(s: str) -> str:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    }
+]
