@@ -388,7 +388,16 @@
         "kind": 2,
         "importPath": "tft_synergies_live",
         "description": "tft_synergies_live",
-        "peekOfCode": "def effective_role_counts(state: State) -> Tuple[float, float, float]:\n    eff_tank = state.tank_count + 0.5 * state.flex_count\n    eff_damage = state.damage_count + 0.5 * state.flex_count\n    diff = abs(eff_tank - eff_damage)\n    return eff_tank, eff_damage, diff\ndef _trait_is_active(cnt: int, tdef: TraitDef) -> bool:\n    return tdef.breakpoints and cnt >= tdef.breakpoints[0]\ndef carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    \"\"\"Score bonus/penalty for carry synergy and special champion restrictions.\"\"\"\n    bonus = 0.0",
+        "peekOfCode": "def effective_role_counts(state: State) -> Tuple[float, float, float]:\n    eff_tank = state.tank_count + 0.5 * state.flex_count\n    eff_damage = state.damage_count + 0.5 * state.flex_count\n    diff = abs(eff_tank - eff_damage)\n    return eff_tank, eff_damage, diff\ndef raw_role_diff(state: State) -> int:\n    return abs(state.tank_count - state.damage_count)\ndef _trait_is_active(cnt: int, tdef: TraitDef) -> bool:\n    return tdef.breakpoints and cnt >= tdef.breakpoints[0]\ndef carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:",
+        "detail": "tft_synergies_live",
+        "documentation": {}
+    },
+    {
+        "label": "raw_role_diff",
+        "kind": 2,
+        "importPath": "tft_synergies_live",
+        "description": "tft_synergies_live",
+        "peekOfCode": "def raw_role_diff(state: State) -> int:\n    return abs(state.tank_count - state.damage_count)\ndef _trait_is_active(cnt: int, tdef: TraitDef) -> bool:\n    return tdef.breakpoints and cnt >= tdef.breakpoints[0]\ndef carry_and_special_bonus(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    \"\"\"Score bonus/penalty for carry synergy and special champion restrictions.\"\"\"\n    bonus = 0.0\n    # --- Carry scoring ---\n    if cfg.carry_traits:\n        carry_set = set(cfg.carry_traits)",
         "detail": "tft_synergies_live",
         "documentation": {}
     },
@@ -415,7 +424,7 @@
         "kind": 2,
         "importPath": "tft_synergies_live",
         "description": "tft_synergies_live",
-        "peekOfCode": "def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    _, _, _, unused_count, _, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    score = trait_score\n    score -= state.total_cost * 0.45\n    score -= diff * cfg.role_balance_weight\n    # light encouragement for minimum role coverage as search develops\n    score -= max(0.0, cfg.min_tanks - eff_tank) * 3.5\n    score -= max(0.0, cfg.min_damage - eff_damage) * 3.5\n    if unused_count > cfg.max_unused_traits:",
+        "peekOfCode": "def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:\n    _, _, _, unused_count, _, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, _ = effective_role_counts(state)\n    diff = raw_role_diff(state)\n    score = trait_score\n    score -= state.total_cost * 0.45\n    score -= diff * cfg.role_balance_weight\n    # light encouragement for minimum role coverage as search develops\n    score -= max(0.0, cfg.min_tanks - eff_tank) * 3.5\n    score -= max(0.0, cfg.min_damage - eff_damage) * 3.5",
         "detail": "tft_synergies_live",
         "documentation": {}
     },
@@ -424,7 +433,7 @@
         "kind": 2,
         "importPath": "tft_synergies_live",
         "description": "tft_synergies_live",
-        "peekOfCode": "def state_sort_key(result: dict, sort_by: str):\n    if sort_by == 'cost':\n        return (result['total_cost'], -result['score'], result['champion_names'])\n    return (-result['score'], -result['total_cost'], result['champion_names'])\ndef final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    if eff_tank < cfg.min_tanks:",
+        "peekOfCode": "def state_sort_key(result: dict, sort_by: str):\n    if sort_by == 'cost':\n        return (result['total_cost'], -result['score'], result['champion_names'])\n    return (-result['score'], -result['total_cost'], result['champion_names'])\ndef final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, _ = effective_role_counts(state)\n    diff = raw_role_diff(state)",
         "detail": "tft_synergies_live",
         "documentation": {}
     },
@@ -433,7 +442,7 @@
         "kind": 2,
         "importPath": "tft_synergies_live",
         "description": "tft_synergies_live",
-        "peekOfCode": "def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    if eff_tank < cfg.min_tanks:\n        return False\n    if eff_damage < cfg.min_damage:\n        return False\n    if diff > cfg.max_role_diff:",
+        "peekOfCode": "def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> bool:\n    _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    if unused_count > cfg.max_unused_traits:\n        return False\n    eff_tank, eff_damage, _ = effective_role_counts(state)\n    diff = raw_role_diff(state)\n    if eff_tank < cfg.min_tanks:\n        return False\n    if eff_damage < cfg.min_damage:\n        return False",
         "detail": "tft_synergies_live",
         "documentation": {}
     },
@@ -442,7 +451,7 @@
         "kind": 2,
         "importPath": "tft_synergies_live",
         "description": "tft_synergies_live",
-        "peekOfCode": "def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> dict:\n    active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, diff = effective_role_counts(state)\n    cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)\n    off_profile_penalty = off_profile_damage_penalty(state, cfg)\n    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus - off_profile_penalty\n    return {\n        'score': round(score, 2),\n        'total_cost': state.total_cost,\n        'champion_names': [u.name for u in state.units],",
+        "peekOfCode": "def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> dict:\n    active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)\n    eff_tank, eff_damage, effective_diff = effective_role_counts(state)\n    diff = raw_role_diff(state)\n    cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)\n    off_profile_penalty = off_profile_damage_penalty(state, cfg)\n    score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus - off_profile_penalty\n    return {\n        'score': round(score, 2),\n        'total_cost': state.total_cost,",
         "detail": "tft_synergies_live",
         "documentation": {}
     },

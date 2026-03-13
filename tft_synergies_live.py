@@ -490,7 +490,8 @@ def evaluate_traits(trait_counts: Dict[str, int], trait_defs: Dict[str, TraitDef
             unused.append(f"{tr_name}({cnt})")
             unused_count += 1
             score -= 9.0
-        if next_bp is not None and next_bp - cnt == 1:
+        # Only reward "near" traits when the first breakpoint is still inactive.
+        if best_bp == 0 and next_bp is not None and next_bp - cnt == 1:
             near.append(f"{tr_name} {cnt}->{next_bp}")
             score += 4.0
     score -= leftover_units * 1.5
@@ -502,6 +503,10 @@ def effective_role_counts(state: State) -> Tuple[float, float, float]:
     eff_damage = state.damage_count + 0.5 * state.flex_count
     diff = abs(eff_tank - eff_damage)
     return eff_tank, eff_damage, diff
+
+
+def raw_role_diff(state: State) -> int:
+    return abs(state.tank_count - state.damage_count)
 
 
 def _trait_is_active(cnt: int, tdef: TraitDef) -> bool:
@@ -578,7 +583,8 @@ def off_profile_damage_penalty(state: State, cfg: SearchConfig) -> float:
 
 def estimate_state_score(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> float:
     _, _, _, unused_count, _, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
-    eff_tank, eff_damage, diff = effective_role_counts(state)
+    eff_tank, eff_damage, _ = effective_role_counts(state)
+    diff = raw_role_diff(state)
     score = trait_score
     score -= state.total_cost * 0.45
     score -= diff * cfg.role_balance_weight
@@ -603,7 +609,8 @@ def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig
     _, _, _, unused_count, _, _ = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
     if unused_count > cfg.max_unused_traits:
         return False
-    eff_tank, eff_damage, diff = effective_role_counts(state)
+    eff_tank, eff_damage, _ = effective_role_counts(state)
+    diff = raw_role_diff(state)
     if eff_tank < cfg.min_tanks:
         return False
     if eff_damage < cfg.min_damage:
@@ -632,7 +639,8 @@ def final_valid(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig
 
 def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfig) -> dict:
     active, near, unused, unused_count, leftover_units, trait_score = evaluate_traits(state.trait_counts, trait_defs, cfg.trait_plus1)
-    eff_tank, eff_damage, diff = effective_role_counts(state)
+    eff_tank, eff_damage, effective_diff = effective_role_counts(state)
+    diff = raw_role_diff(state)
     cs_bonus = carry_and_special_bonus(state, trait_defs, cfg)
     off_profile_penalty = off_profile_damage_penalty(state, cfg)
     score = trait_score - state.total_cost * 0.45 - diff * cfg.role_balance_weight + cs_bonus - off_profile_penalty
@@ -647,7 +655,8 @@ def build_result(state: State, trait_defs: Dict[str, TraitDef], cfg: SearchConfi
             'flex': state.flex_count,
             'effective_tanks': round(eff_tank, 1),
             'effective_damage': round(eff_damage, 1),
-            'diff': round(diff, 1),
+            'effective_diff': round(effective_diff, 1),
+            'diff': diff,
         },
         'active_traits': active,
         'near_traits': near,
@@ -764,7 +773,8 @@ def print_text_results(results: List[dict], meta: dict):
         roles = r['roles']
         print(
             f"Roles: tank={roles['tank']}, damage={roles['damage']}, flex={roles['flex']} | "
-            f"effective_tanks={roles['effective_tanks']}, effective_damage={roles['effective_damage']}, diff={roles['diff']}"
+            f"effective_tanks={roles['effective_tanks']}, effective_damage={roles['effective_damage']}, "
+            f"diff={roles['diff']}, effective_diff={roles['effective_diff']}"
         )
         print("Active: " + ("; ".join(r['active_traits']) if r['active_traits'] else "none"))
         print("Near: " + ("; ".join(r['near_traits']) if r['near_traits'] else "none"))
