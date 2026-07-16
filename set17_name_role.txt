@@ -1,0 +1,63 @@
+Aatrox:tank
+Akali:fighter
+Aurelion'Sol:caster
+Aurora:caster
+Bard:caster
+Bel'Veth:fighter
+Blitzcrank:fighter
+Briar:fighter
+Caitlyn:specialist
+Cho'Gath:tank
+Corki:caster
+Diana:fighter
+Ezreal:caster
+Fiora:fighter
+Fizz:assassin
+Gnar:specialist
+Gragas:tank
+Graves:marksman
+Gwen:assassin
+Illaoi:tank
+Jax:tank
+Jhin:marksman
+Jinx:marksman
+Kai'Sa:caster
+Karma:caster
+Kindred:marksman
+LeBlanc:marksman
+Leona:tank
+Lissandra:caster
+Lulu:caster
+Maokai:tank
+Master Yi:fighter
+Meepsie:tank
+Milio:caster
+Miss Fortune:caster
+Mordekaiser:tank
+Morgana:fighter
+Nami:caster
+Nasus:tank
+Nunu:tank
+Ornn:tank
+Pantheon:tank
+Poppy:tank
+Pyke:assassin
+Rammus:tank
+Rek'Sai:tank
+Rhaast:tank
+Riven:fighter
+Samira:caster
+Shen:fighter
+Sona:caster
+Tahm Kench:tank
+Talon:assassin
+Teemo:marksman
+The Mighty Mech:tank
+Twisted Fate:caster
+Urgot:fighter
+Veigar:caster
+Vex:marksman
+Viktor:caster
+Xayah:marksman
+Zed:fighter
+Zoe:caster

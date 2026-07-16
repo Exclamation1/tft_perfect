@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Caches
+.npm-cache/
+.tft_synergy_cache/
+
+# Logs
+*.log
+
+# Build / deploy artifacts
+deploy_bundle.zip
+
+# Editor / OS
+.DS_Store

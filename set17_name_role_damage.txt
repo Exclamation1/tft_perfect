@@ -1,0 +1,63 @@
+Aatrox:tank:attack
+Akali:fighter:attack
+Aurelion'Sol:caster:magic
+Aurora:caster:magic
+Bard:caster:magic
+Bel'Veth:fighter:attack
+Blitzcrank:fighter:magic
+Briar:fighter:attack
+Caitlyn:specialist:attack
+Cho'Gath:tank:magic
+Corki:caster:attack
+Diana:fighter:magic
+Ezreal:caster:attack
+Fiora:fighter:attack
+Fizz:assassin:magic
+Gnar:specialist:attack
+Gragas:tank:magic
+Graves:marksman:attack
+Gwen:assassin:magic
+Illaoi:tank:magic
+Jax:tank:magic
+Jhin:marksman:attack
+Jinx:marksman:attack
+Kai'Sa:caster:attack
+Karma:caster:magic
+Kindred:marksman:attack
+LeBlanc:marksman:magic
+Leona:tank:magic
+Lissandra:caster:magic
+Lulu:caster:magic
+Maokai:tank:magic
+Master Yi:fighter:attack
+Meepsie:tank:magic
+Milio:caster:magic
+Miss Fortune:caster:attack
+Mordekaiser:tank:magic
+Morgana:fighter:magic
+Nami:caster:magic
+Nasus:tank:magic
+Nunu:tank:magic
+Ornn:tank:magic
+Pantheon:tank:attack
+Poppy:tank:magic
+Pyke:assassin:attack
+Rammus:tank:magic
+Rek'Sai:tank:magic
+Rhaast:tank:attack
+Riven:fighter:hybrid
+Samira:caster:attack
+Shen:fighter:magic
+Sona:caster:magic
+Tahm Kench:tank:magic
+Talon:assassin:attack
+Teemo:marksman:magic
+The Mighty Mech:tank:attack
+Twisted Fate:caster:magic
+Urgot:fighter:attack
+Veigar:caster:magic
+Vex:marksman:magic
+Viktor:caster:magic
+Xayah:marksman:attack
+Zed:fighter:attack
+Zoe:caster:magic

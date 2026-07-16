@@ -1,0 +1,1826 @@
+{
+  "set_number": "17",
+  "source": "https://tactics.tools/info/set-update",
+  "generated_at": "2026-03-30T07:51:46Z",
+  "traits": [
+    {
+      "name": "Anima",
+      "breakpoints": [
+        3,
+        6
+      ],
+      "units": [
+        "Aurora",
+        "Briar",
+        "Fiora",
+        "Illaoi",
+        "Jinx"
+      ],
+      "description": "After losing a player combat, gain 15 Tech, plus additional Tech equal to 5 times the length of your loss streak. Additionally, gain 2 Tech per Anima takedown. Each time Animas get 100 Tech, they prototype new Anima Weapons. You can take them, or save your Tech to get more powerful weapons next time. (3) Start Researching! (6) Gain a loot Orb upon win",
+      "variants": [
+        {
+          "breakpoints": [
+            3,
+            6
+          ],
+          "description": "After losing a player combat, gain 15 Tech, plus additional Tech equal to 5 times the length of your loss streak. Additionally, gain 2 Tech per Anima takedown. Each time Animas get 100 Tech, they prototype new Anima Weapons. You can take them, or save your Tech to get more powerful weapons next time. (3) Start Researching! (6) Gain a loot Orb upon win"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_anima_w.svg",
+      "icon_slug": "anima"
+    },
+    {
+      "name": "Arbiter",
+      "breakpoints": [
+        2,
+        3
+      ],
+      "units": [
+        "Diana",
+        "LeBlanc",
+        "Leona",
+        "Zoe"
+      ],
+      "description": "Scribe a unique divine law, allowing you to choose an effect to apply to Arbiters when a chosen cause occurs. (2) Choose a cause and effect for your law (3) Effects are stronger.",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3
+          ],
+          "description": "Scribe a unique divine law, allowing you to choose an effect to apply to Arbiters when a chosen cause occurs. (2) Choose a cause and effect for your law (3) Effects are stronger."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_arbiter_w.svg",
+      "icon_slug": "arbiter"
+    },
+    {
+      "name": "Bastion",
+      "breakpoints": [
+        2,
+        4,
+        6
+      ],
+      "units": [
+        "Aatrox",
+        "Jax",
+        "Ornn",
+        "Poppy",
+        "Rammus",
+        "Shen"
+      ],
+      "description": "Your team gains 12 [Armor] [Magic resist] . Bastions gain more, and the value doubles in the first 10 seconds of combat. (2) 16 [Armor] [Magic resist] (4) 35 [Armor] [Magic resist] (6) 55 [Armor] [Magic resist] ; Non-Bastions gain an additional 20 [Armor] [Magic resist] .",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4,
+            6
+          ],
+          "description": "Your team gains 12 [Armor] [Magic resist] . Bastions gain more, and the value doubles in the first 10 seconds of combat. (2) 16 [Armor] [Magic resist] (4) 35 [Armor] [Magic resist] (6) 55 [Armor] [Magic resist] ; Non-Bastions gain an additional 20 [Armor] [Magic resist] ."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_bastion_w.svg",
+      "icon_slug": "bastion"
+    },
+    {
+      "name": "Brawler",
+      "breakpoints": [
+        2,
+        4,
+        6
+      ],
+      "units": [
+        "Cho'Gath",
+        "Gragas",
+        "Maokai",
+        "Pantheon",
+        "Rek'Sai",
+        "Tahm Kench",
+        "Urgot"
+      ],
+      "description": "Your team gains 7% [Health] . Brawlers gain more. (2) +25% maximum Health (4) +45% maximum Health (6) +65% maximum Health",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4,
+            6
+          ],
+          "description": "Your team gains 7% [Health] . Brawlers gain more. (2) +25% maximum Health (4) +45% maximum Health (6) +65% maximum Health"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_brawler_w.svg",
+      "icon_slug": "brawler"
+    },
+    {
+      "name": "Bulwark",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Shen"
+      ],
+      "description": "Summon a placeable relic. At the start of combat, it grants adjacent allies a 18% max Health shield and 20% Attack Speed.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Summon a placeable relic. At the start of combat, it grants adjacent allies a 18% max Health shield and 20% Attack Speed."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_bulwark_w.svg",
+      "icon_slug": "bulwark"
+    },
+    {
+      "name": "Challenger",
+      "breakpoints": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "units": [
+        "Bel'Veth",
+        "Diana",
+        "Jinx",
+        "Kindred"
+      ],
+      "description": "Your team gains 10% [Attack speed] . Challengers gain bonus Attack Speed. When their target dies, Challengers dash to a new target and increase their Attack Speed bonus by 50% for 2.50 seconds. (2) 15% [Attack speed] (3) 22% [Attack speed] (4) 30% [Attack speed] (5) 40% [Attack speed]",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Your team gains 10% [Attack speed] . Challengers gain bonus Attack Speed. When their target dies, Challengers dash to a new target and increase their Attack Speed bonus by 50% for 2.50 seconds. (2) 15% [Attack speed] (3) 22% [Attack speed] (4) 30% [Attack speed] (5) 40% [Attack speed]"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_challenger_w.svg",
+      "icon_slug": "challenger"
+    },
+    {
+      "name": "Channeler",
+      "breakpoints": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "units": [
+        "Aurelion'Sol",
+        "Bard",
+        "Mordekaiser",
+        "Viktor",
+        "Zoe"
+      ],
+      "description": "Innate: Channelers gain 20% additional Mana from all sources. Your team gains Mana Regen, increased for Channelers. (2) 1% Mana Regen | 3% Mana Regen (3) 1% Mana Regen | 4% Mana Regen (4) 2% Mana Regen | 6% Mana Regen (5) 2% Mana Regen | 7% Mana Regen",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Innate: Channelers gain 20% additional Mana from all sources. Your team gains Mana Regen, increased for Channelers. (2) 1% Mana Regen | 3% Mana Regen (3) 1% Mana Regen | 4% Mana Regen (4) 2% Mana Regen | 6% Mana Regen (5) 2% Mana Regen | 7% Mana Regen"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_channeler_w.svg",
+      "icon_slug": "channeler"
+    },
+    {
+      "name": "Commander",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Sona"
+      ],
+      "description": "Sona gives you a random Command Mod every 2 rounds which allows you to alter the way an ally behaves during combat. Command Mods last 2 player combats even if they are not equipped.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Sona gives you a random Command Mod every 2 rounds which allows you to alter the way an ally behaves during combat. Command Mods last 2 player combats even if they are not equipped."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_commander_w.svg",
+      "icon_slug": "commander"
+    },
+    {
+      "name": "Dark Lady",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Morgana"
+      ],
+      "description": "Allies take 5% less damage from abilities, increased to 10% while Morgana is in Dark Form.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Allies take 5% less damage from abilities, increased to 10% while Morgana is in Dark Form."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_darklady_w.svg",
+      "icon_slug": "darklady"
+    },
+    {
+      "name": "Dark Star",
+      "breakpoints": [
+        2,
+        4,
+        6,
+        9
+      ],
+      "units": [
+        "Cho'Gath",
+        "Jhin",
+        "Kai'Sa",
+        "Karma",
+        "Lissandra",
+        "Mordekaiser"
+      ],
+      "description": "(2) Dark Stars create a black hole that consumes enemies at 10% max health. (4) AND they gain 30% [Attack damage] [Ability power] . (6) AND the strongest Dark Star unit goes supermassive, gaining 100% effectiveness from Dark Star, and creates 2 minor Black Holes. (9) All Dark Stars are supermassive. At level 10, CONSUME EVERYONE.",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4,
+            6,
+            9
+          ],
+          "description": "(2) Dark Stars create a black hole that consumes enemies at 10% max health. (4) AND they gain 30% [Attack damage] [Ability power] . (6) AND the strongest Dark Star unit goes supermassive, gaining 100% effectiveness from Dark Star, and creates 2 minor Black Holes. (9) All Dark Stars are supermassive. At level 10, CONSUME EVERYONE."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_darkstar_w.svg",
+      "icon_slug": "darkstar"
+    },
+    {
+      "name": "Divine Duelist",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Fiora"
+      ],
+      "description": "You heal for 15% of player damage you deal. Fiora always wins a one on one duel.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "You heal for 15% of player damage you deal. Fiora always wins a one on one duel."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_divineduelist_w.svg",
+      "icon_slug": "divineduelist"
+    },
+    {
+      "name": "Doomer",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Vex"
+      ],
+      "description": "Combat Start: Mark all enemies with Doom. The first time enemies are damaged each combat, their Doom is consumed, stealing 8% Attack Damage and Ability Power from them and granting it to your strongest Vex.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Combat Start: Mark all enemies with Doom. The first time enemies are damaged each combat, their Doom is consumed, stealing 8% Attack Damage and Ability Power from them and granting it to your strongest Vex."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_doomer_w.svg",
+      "icon_slug": "doomer"
+    },
+    {
+      "name": "Eradicator",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Jhin"
+      ],
+      "description": "Enemies have 14% less Armor and Magic Resist.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Enemies have 14% less Armor and Magic Resist."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_supermassive_w.svg",
+      "icon_slug": "supermassive"
+    },
+    {
+      "name": "Factory New",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Graves"
+      ],
+      "description": "After participating in combat, open an armory to purchase a permanent upgrade for your strongest Graves. Every 3 upgrades, future upgrades will take an additional round.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "After participating in combat, open an armory to purchase a permanent upgrade for your strongest Graves. Every 3 upgrades, future upgrades will take an additional round."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_factorynew_w.svg",
+      "icon_slug": "factorynew"
+    },
+    {
+      "name": "Fateweaver",
+      "breakpoints": [
+        2,
+        4
+      ],
+      "units": [
+        "Caitlyn",
+        "Corki",
+        "Milio",
+        "Twisted Fate"
+      ],
+      "description": "Innate: Fateweavers have Precision. (2) Chance effects on abilities are Lucky. (4) Gain 20% Crit Chance and 10% Crit Damage. Critical strikes are also Lucky.",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4
+          ],
+          "description": "Innate: Fateweavers have Precision. (2) Chance effects on abilities are Lucky. (4) Gain 20% Crit Chance and 10% Crit Damage. Critical strikes are also Lucky."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_fateweaver_w.svg",
+      "icon_slug": "fateweaver"
+    },
+    {
+      "name": "Galaxy Hunter",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Zed"
+      ],
+      "description": "Zed is obtained from the Invader Zed augment. While at least one clone is alive, Zed gains 40% bonus Attack Damage.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Zed is obtained from the Invader Zed augment. While at least one clone is alive, Zed gains 40% bonus Attack Damage."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_galaxyhunter_w.svg",
+      "icon_slug": "galaxyhunter"
+    },
+    {
+      "name": "Gun Goddess",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Miss Fortune"
+      ],
+      "description": "When you field Miss Fortune, choose between Channeler Mode, Challenger Mode, and Replicator Mode. Miss Fortune has a unique ability based on her mode and gains the associated trait.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "When you field Miss Fortune, choose between Channeler Mode, Challenger Mode, and Replicator Mode. Miss Fortune has a unique ability based on her mode and gains the associated trait."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_gungoddess_w.svg",
+      "icon_slug": "gungoddess"
+    },
+    {
+      "name": "Marauder",
+      "breakpoints": [
+        2,
+        4,
+        6
+      ],
+      "units": [
+        "Akali",
+        "Bel'Veth",
+        "Fiora",
+        "Master Yi",
+        "Urgot"
+      ],
+      "description": "Your team gains 5% [Omnivamp] . Marauders gain more Omnivamp, Attack Damage, and their Omnivamp overhealing is converted into Shield (up to 25% max Health.) (2) 5% [Omnivamp] , 20% [Attack damage] (4) 7% [Omnivamp] , 30% [Attack damage] (6) 10% [Omnivamp] , 40% [Attack damage] .",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4,
+            6
+          ],
+          "description": "Your team gains 5% [Omnivamp] . Marauders gain more Omnivamp, Attack Damage, and their Omnivamp overhealing is converted into Shield (up to 25% max Health.) (2) 5% [Omnivamp] , 20% [Attack damage] (4) 7% [Omnivamp] , 30% [Attack damage] (6) 10% [Omnivamp] , 40% [Attack damage] ."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_marauder_w.svg",
+      "icon_slug": "marauder"
+    },
+    {
+      "name": "Mecha",
+      "breakpoints": [
+        3,
+        4,
+        6
+      ],
+      "units": [
+        "Aurelion'Sol",
+        "The Mighty Mech",
+        "Urgot"
+      ],
+      "description": "Innate: Mecha units can transform into their Ultimate form, upgrading their ability and gaining 60% Health. Transformed Mechas take up two team slots and count twice for the Mecha trait. (3) Energy Cells: Mechas gain 20% [Attack damage] [Ability power] . (4) Overclocked Cells: Increased to 35% [Attack damage] [Ability power] . (6) Precision Engineering: +1 max team size",
+      "variants": [
+        {
+          "breakpoints": [
+            3,
+            4,
+            6
+          ],
+          "description": "Innate: Mecha units can transform into their Ultimate form, upgrading their ability and gaining 60% Health. Transformed Mechas take up two team slots and count twice for the Mecha trait. (3) Energy Cells: Mechas gain 20% [Attack damage] [Ability power] . (4) Overclocked Cells: Increased to 35% [Attack damage] [Ability power] . (6) Precision Engineering: +1 max team size"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_mecha_w.svg",
+      "icon_slug": "mecha"
+    },
+    {
+      "name": "Meeple",
+      "breakpoints": [
+        3,
+        5,
+        7,
+        10
+      ],
+      "units": [
+        "Bard",
+        "Corki",
+        "Fizz",
+        "Gnar",
+        "Meepsie",
+        "Poppy",
+        "Rammus",
+        "Veigar"
+      ],
+      "description": "Astronauts attract Meeps that empower Astronaut abilities in meepy ways. They also gain bonus Health. (3) 2%, 125 [Health] (5) 3%, 250 [Health] (7) 4%, 400 [Health] . Create a Cloning Slot on your bench. Gain gold and a 1-star copy of the champion placed there when cloning completes. (10) 6%, 1000 [Health] . SUMMON THE FOUR MEEPLORDS! Cloning time = Champion cost",
+      "variants": [
+        {
+          "breakpoints": [
+            3,
+            5,
+            7,
+            10
+          ],
+          "description": "Astronauts attract Meeps that empower Astronaut abilities in meepy ways. They also gain bonus Health. (3) 2%, 125 [Health] (5) 3%, 250 [Health] (7) 4%, 400 [Health] . Create a Cloning Slot on your bench. Gain gold and a 1-star copy of the champion placed there when cloning completes. (10) 6%, 1000 [Health] . SUMMON THE FOUR MEEPLORDS! Cloning time = Champion cost"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_meeple_w.svg",
+      "icon_slug": "meeple"
+    },
+    {
+      "name": "N.O.V.A.",
+      "breakpoints": [
+        2,
+        5
+      ],
+      "units": [
+        "Aatrox",
+        "Akali",
+        "Caitlyn",
+        "Kindred",
+        "Maokai"
+      ],
+      "description": "(2) 6 seconds into combat, N.O.V.A. grant a power surge to allies based on champions. (5) Gain a Striker selector. The chosen N.O.V.A. activates their Strike during the power surge. Aatrox: Ally Damage 30% Shred and Sunders enemies Caitlyn: Grant allies 20% Attack Speed Akali: Allies gain Precision Maokai: Allies heal 15% max Health Kindred: Shield the strongest Tank for 800 Emblem: Allies deal 10% stacking bonus true damage",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            5
+          ],
+          "description": "(2) 6 seconds into combat, N.O.V.A. grant a power surge to allies based on champions. (5) Gain a Striker selector. The chosen N.O.V.A. activates their Strike during the power surge. Aatrox: Ally Damage 30% Shred and Sunders enemies Caitlyn: Grant allies 20% Attack Speed Akali: Allies gain Precision Maokai: Allies heal 15% max Health Kindred: Shield the strongest Tank for 800 Emblem: Allies deal 10% stacking bonus true damage"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_nova_w.svg",
+      "icon_slug": "nova"
+    },
+    {
+      "name": "Oracle",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Tahm Kench"
+      ],
+      "description": "Every 3 rounds, Tahm Kench grants a reward!",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Every 3 rounds, Tahm Kench grants a reward!"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_arcana_w.svg",
+      "icon_slug": "arcana"
+    },
+    {
+      "name": "Party Animal",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Blitzcrank"
+      ],
+      "description": "Once per combat, after falling below 45% percent Health, become untargetable and repair 15% max Health per second. Upon reaching full Health, or when no other allies remain, return to combat. If fully healed, for the rest of combat Blitzcrank is in The Groove and Party Crasher's passive fires bolts four times as fast.",
+      "variants": [
+        {
+          "breakpoints": [],
+          "description": "Once per combat, after falling below 45% percent Health, become untargetable and repair 15% max Health per second. Upon reaching full Health, or when no other allies remain, return to combat. If fully healed, for the rest of combat Blitzcrank is in The Groove and Party Crasher's passive fires bolts four times as fast."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_partyanimal_w.svg",
+      "icon_slug": "partyanimal"
+    },
+    {
+      "name": "Primordian",
+      "breakpoints": [
+        2,
+        3
+      ],
+      "units": [
+        "Bel'Veth",
+        "Briar",
+        "Rek'Sai"
+      ],
+      "description": "(2) Dealing damage spawns Swarmlings based on Primordian star level. (3) Spawn even more Swarmlings! Each round, gain a random 1 or 2-cost champion. 8% of damage taken contributes to damage dealt.",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3
+          ],
+          "description": "(2) Dealing damage spawns Swarmlings based on Primordian star level. (3) Spawn even more Swarmlings! Each round, gain a random 1 or 2-cost champion. 8% of damage taken contributes to damage dealt."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_primordian_w.svg",
+      "icon_slug": "primordian"
+    },
+    {
+      "name": "Psionic",
+      "breakpoints": [
+        2,
+        4
+      ],
+      "units": [
+        "Gragas",
+        "Master Yi",
+        "Pyke",
+        "Sona",
+        "Viktor"
+      ],
+      "description": "Gain Psionic items that can be equipped to any ally. (2) Gain the Psionic item 1 (4) Gain the Psionic item 2 , Psionic items gain extra effects on Psionic units",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4
+          ],
+          "description": "Gain Psionic items that can be equipped to any ally. (2) Gain the Psionic item 1 (4) Gain the Psionic item 2 , Psionic items gain extra effects on Psionic units"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_psionic_w.svg",
+      "icon_slug": "psionic"
+    },
+    {
+      "name": "Redeemer",
+      "breakpoints": [
+        1
+      ],
+      "units": [
+        "Rhaast"
+      ],
+      "description": "(1) For each non-unique trait you have active, your team gains 2%/3%/4% Attack Speed, and 2/3/4 Armor and Magic Resist.",
+      "variants": [
+        {
+          "breakpoints": [
+            1
+          ],
+          "description": "(1) For each non-unique trait you have active, your team gains 2%/3%/4% Attack Speed, and 2/3/4 Armor and Magic Resist."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_redeemer_w.svg",
+      "icon_slug": "redeemer"
+    },
+    {
+      "name": "Replicator",
+      "breakpoints": [
+        2,
+        4
+      ],
+      "units": [
+        "Lissandra",
+        "Lulu",
+        "Nami",
+        "Pantheon",
+        "Veigar"
+      ],
+      "description": "Replicator abilities occur a second time at reduced effectiveness. (2) 25% strength (4) 50% strength",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4
+          ],
+          "description": "Replicator abilities occur a second time at reduced effectiveness. (2) 25% strength (4) 50% strength"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_replicator_w.svg",
+      "icon_slug": "replicator"
+    },
+    {
+      "name": "Rogue",
+      "breakpoints": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "units": [
+        "Briar",
+        "Fizz",
+        "Gwen",
+        "Kai'Sa",
+        "Riven",
+        "Talon"
+      ],
+      "description": "Rogues gain Attack Damage and Ability Power. The first time they fall below 50% health, they slip into shadows. Enemies targeting them are redirected to a nearby unit, preferring Tanks. (2) 15% [Attack damage] [Ability power] (3) 30% [Attack damage] [Ability power] (4) 45% [Attack damage] [Ability power] (5) 60% [Attack damage] [Ability power]",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Rogues gain Attack Damage and Ability Power. The first time they fall below 50% health, they slip into shadows. Enemies targeting them are redirected to a nearby unit, preferring Tanks. (2) 15% [Attack damage] [Ability power] (3) 30% [Attack damage] [Ability power] (4) 45% [Attack damage] [Ability power] (5) 60% [Attack damage] [Ability power]"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_rogue_w.svg",
+      "icon_slug": "rogue"
+    },
+    {
+      "name": "Shepherd",
+      "breakpoints": [
+        3,
+        5,
+        7
+      ],
+      "units": [
+        "Illaoi",
+        "LeBlanc",
+        "Lissandra",
+        "Meepsie",
+        "Sona",
+        "Teemo"
+      ],
+      "description": "Shepherds summon the Bond of the Stars to aid them in battle. (3) Summon Bia (5) Summon Bayin (7) Bia and Bayin's bond grows deeper Bia and Bayin's power are increased by the total star level of Shepherd.",
+      "variants": [
+        {
+          "breakpoints": [
+            3,
+            5,
+            7
+          ],
+          "description": "Shepherds summon the Bond of the Stars to aid them in battle. (3) Summon Bia (5) Summon Bayin (7) Bia and Bayin's bond grows deeper Bia and Bayin's power are increased by the total star level of Shepherd."
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_shepherd_w.svg",
+      "icon_slug": "shepherd"
+    },
+    {
+      "name": "Sniper",
+      "breakpoints": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "units": [
+        "Ezreal",
+        "Gnar",
+        "Jhin",
+        "Samira",
+        "Xayah"
+      ],
+      "description": "Snipers gain Damage Amp, increased against targets farther away. (2) 18% [Damage Amplification] ; +2% [Damage Amplification] per hex (3) 24% [Damage Amplification] ; +3% [Damage Amplification] per hex (4) 28% [Damage Amplification] ; +4% [Damage Amplification] per hex (5) 32% [Damage Amplification] ; +5% [Damage Amplification] per hex",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Snipers gain Damage Amp, increased against targets farther away. (2) 18% [Damage Amplification] ; +2% [Damage Amplification] per hex (3) 24% [Damage Amplification] ; +3% [Damage Amplification] per hex (4) 28% [Damage Amplification] ; +4% [Damage Amplification] per hex (5) 32% [Damage Amplification] ; +5% [Damage Amplification] per hex"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_sniper_w.svg",
+      "icon_slug": "sniper"
+    },
+    {
+      "name": "Space Groove",
+      "breakpoints": [
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "units": [
+        "Blitzcrank",
+        "Gwen",
+        "Nami",
+        "Nasus",
+        "Ornn",
+        "Samira",
+        "Teemo"
+      ],
+      "description": "(1) Groovians can enter the Groove. While in it, they gain Attack Speed and max Health Regen, increased per Groovian on your team. (3) All Groovians start combat in the Groove for 3 seconds. (5) Each second spent in the Groove grants 3% stacking Attack Damage and Ability Power. (7) Increase these effects by 20%! (10) the Groove",
+      "variants": [
+        {
+          "breakpoints": [
+            1,
+            3,
+            5,
+            7,
+            10
+          ],
+          "description": "(1) Groovians can enter the Groove. While in it, they gain Attack Speed and max Health Regen, increased per Groovian on your team. (3) All Groovians start combat in the Groove for 3 seconds. (5) Each second spent in the Groove grants 3% stacking Attack Damage and Ability Power. (7) Increase these effects by 20%! (10) the Groove"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_spacegroove_w.svg",
+      "icon_slug": "spacegroove"
+    },
+    {
+      "name": "Stargazer",
+      "breakpoints": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "units": [
+        "Jax",
+        "Lulu",
+        "Nunu",
+        "Talon",
+        "Twisted Fate",
+        "Xayah"
+      ],
+      "description": "Stargazers chart a different constellation every game. This game: The Serpent. Allies in empowered hexes gain 8% Durability. Stargazers in empowered hexes gain more and poison enemies, repeating a portion of damage dealt as magic damage over 3 seconds. (3) 15% [Damage Reduction] , 30% poison damage (5) 20% [Damage Reduction] , 45% poison damage (7) 25% [Damage Reduction] , 60% poison damage More hexes reveal at each player level",
+      "variants": [
+        {
+          "breakpoints": [
+            3,
+            5,
+            7
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Serpent. Allies in empowered hexes gain 8% Durability. Stargazers in empowered hexes gain more and poison enemies, repeating a portion of damage dealt as magic damage over 3 seconds. (3) 15% [Damage Reduction] , 30% poison damage (5) 20% [Damage Reduction] , 45% poison damage (7) 25% [Damage Reduction] , 60% poison damage More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3,
+            5,
+            7
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Huntress. Mark the highest Health enemies. Allies in empowered hexes gain 15% attack speed. Stargazers in empowered hexes gain more and heal for 10% of their max health when a maked enemy dies. (3) 30% [Attack speed] , 3 marks (5) 45% [Attack speed] , 5 marks (7) 60% [Attack speed] , 7 marks More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Mountain. Every 5 player combat, gain a Stargazer emblem. Stargazers in empowered hexes gain various bonuses. (3) Gain 15% [Health] (4) AND 15% [Attack damage] [Ability power] (5) AND 15 [Armor] [Magic resist] (6) AND 15% [Attack speed] (7) AND 12% [Damage Reduction] (8) AND increase all other bonuses by 20% (9) I can see the summit... (10) ... almost there... (11) The stars beckon all enemies More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Altar. (3) When ANY unit dies, they are sacrficed to the altar. Allies in empowered hexes gain 10% health and 15% attack speed. After 60 sacrifices, Stargazers in empowered hexes gain an additional 25% health and 40% attack speed More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Medallion. (3) Allies in empowered hexes gain 15% [Damage Amplification] , which increases by 3% for each 3 star on your team More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3,
+            5
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Fountain. Allies in empowered hexes gain 1 mana regen. Stargazers in empowered hexes gani more and heal the lowest Health ally with their abilities (3) 3 mana regen, 10% ability damage heal (5) 5 mana regen, 18% ability damage heal More hexes reveal at each player level"
+        },
+        {
+          "breakpoints": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Stargazers chart a different constellation every game. This game: The Boar. Gain gold on win. Allies in empowered hexes gain 8% health, attack damage, and ability power. Stargazers gain more. (3) 1 gold, 10% [Health] , 18% [Attack damage] [Ability power] (4) 2 gold, 15% [Health] , 25% [Attack damage] [Ability power] (5) 3 gold, 20% [Health] , 33% [Attack damage] [Ability power] (6) 5 gold, 25% [Health] , 40% [Attack damage] [Ability power] More hexes reveal at each player level"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_stargazer_w.svg",
+      "icon_slug": "stargazer"
+    },
+    {
+      "name": "Timebreaker",
+      "breakpoints": [
+        2,
+        3,
+        4
+      ],
+      "units": [
+        "Ezreal",
+        "Milio",
+        "Pantheon",
+        "Riven"
+      ],
+      "description": "(2) When you lose, gain free rerolls. When you win, store XP in a Temporal Core (scales with stage). (3) AND Allies gain 15% [Attack speed] . (4) AND Timebreakers gain an additional 50% [Attack speed]",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4
+          ],
+          "description": "(2) When you lose, gain free rerolls. When you win, store XP in a Temporal Core (scales with stage). (3) AND Allies gain 15% [Attack speed] . (4) AND Timebreakers gain an additional 50% [Attack speed]"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_timebreaker_w.svg",
+      "icon_slug": "timebreaker"
+    },
+    {
+      "name": "Vanguard",
+      "breakpoints": [
+        2,
+        4,
+        6
+      ],
+      "units": [
+        "Blitzcrank",
+        "Illaoi",
+        "Leona",
+        "Mordekaiser",
+        "Nasus",
+        "Nunu"
+      ],
+      "description": "Vanguards gain 5% [Damage Reduction] while Shielded. Combat start and 50% Health: Gain a max Health Shield for 10 seconds. (2) 16% max Health (4) 28% max Health (6) 40% max Health;10% [Damage Reduction] while Shielded",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            4,
+            6
+          ],
+          "description": "Vanguards gain 5% [Damage Reduction] while Shielded. Combat start and 50% Health: Gain a max Health Shield for 10 seconds. (2) 16% max Health (4) 28% max Health (6) 40% max Health;10% [Damage Reduction] while Shielded"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_vanguard_w.svg",
+      "icon_slug": "vanguard"
+    },
+    {
+      "name": "Voyager",
+      "breakpoints": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "units": [
+        "Aurora",
+        "Karma",
+        "Meepsie",
+        "Pyke",
+        "The Mighty Mech"
+      ],
+      "description": "Combat Start: Your Tanks and Fighters gain a Shield for 15 seconds. Your other allies gain Damage Amp. Voyagers gain double. (2) 175 Shield; 9% [Damage Amplification] (3) 250 Shield; 15% [Damage Amplification] (4) 350 Shield; 18% [Damage Amplification] (5) 500 Shield; 22% [Damage Amplification] (6) 700 Shield; 27% [Damage Amplification]",
+      "variants": [
+        {
+          "breakpoints": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Combat Start: Your Tanks and Fighters gain a Shield for 15 seconds. Your other allies gain Damage Amp. Voyagers gain double. (2) 175 Shield; 9% [Damage Amplification] (3) 250 Shield; 15% [Damage Amplification] (4) 350 Shield; 18% [Damage Amplification] (5) 500 Shield; 22% [Damage Amplification] (6) 700 Shield; 27% [Damage Amplification]"
+        }
+      ],
+      "icon_url": "https://ap.tft.tools/static/trait-icons/new17_tft17_voyager_w.svg",
+      "icon_slug": "voyager"
+    }
+  ],
+  "units": [
+    {
+      "id": "aatrox",
+      "name": "Aatrox",
+      "api_name": "TFT17_Aatrox",
+      "cost": 1,
+      "traits": [
+        "N.O.V.A.",
+        "Bastion"
+      ],
+      "archetype": "Attack Tank",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_aatrox.jpg?w=116"
+    },
+    {
+      "id": "akali",
+      "name": "Akali",
+      "api_name": "TFT17_Akali",
+      "cost": 2,
+      "traits": [
+        "N.O.V.A.",
+        "Marauder"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_akali.jpg?w=116"
+    },
+    {
+      "id": "aurelionsol",
+      "name": "Aurelion'Sol",
+      "api_name": "TFT17_AurelionSol",
+      "cost": 4,
+      "traits": [
+        "Mecha",
+        "Channeler"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_aurelionsol.jpg?w=116"
+    },
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "api_name": "TFT17_Aurora",
+      "cost": 3,
+      "traits": [
+        "Anima",
+        "Voyager"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_aurora.jpg?w=116"
+    },
+    {
+      "id": "bard",
+      "name": "Bard",
+      "api_name": "TFT17_Bard",
+      "cost": 5,
+      "traits": [
+        "Meeple",
+        "Channeler"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_bard.jpg?w=116"
+    },
+    {
+      "id": "belveth",
+      "name": "Bel'Veth",
+      "api_name": "TFT17_Belveth",
+      "cost": 2,
+      "traits": [
+        "Primordian",
+        "Challenger",
+        "Marauder"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 2,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_belveth.jpg?w=116"
+    },
+    {
+      "id": "blitzcrank",
+      "name": "Blitzcrank",
+      "api_name": "TFT17_Blitzcrank",
+      "cost": 5,
+      "traits": [
+        "Party Animal",
+        "Space Groove",
+        "Vanguard"
+      ],
+      "archetype": "Magic Fighter",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_blitzcrank.jpg?w=116"
+    },
+    {
+      "id": "briar",
+      "name": "Briar",
+      "api_name": "TFT17_Briar",
+      "cost": 1,
+      "traits": [
+        "Anima",
+        "Primordian",
+        "Rogue"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_briar.jpg?w=116"
+    },
+    {
+      "id": "caitlyn",
+      "name": "Caitlyn",
+      "api_name": "TFT17_Caitlyn",
+      "cost": 1,
+      "traits": [
+        "N.O.V.A.",
+        "Fateweaver"
+      ],
+      "archetype": "Attack Specialist",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_caitlyn.jpg?w=116"
+    },
+    {
+      "id": "chogath",
+      "name": "Cho'Gath",
+      "api_name": "TFT17_ChoGath",
+      "cost": 1,
+      "traits": [
+        "Dark Star",
+        "Brawler"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_chogath.jpg?w=116"
+    },
+    {
+      "id": "corki",
+      "name": "Corki",
+      "api_name": "TFT17_Corki",
+      "cost": 4,
+      "traits": [
+        "Meeple",
+        "Fateweaver"
+      ],
+      "archetype": "Attack Caster",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_corki.jpg?w=116"
+    },
+    {
+      "id": "diana",
+      "name": "Diana",
+      "api_name": "TFT17_Diana",
+      "cost": 3,
+      "traits": [
+        "Arbiter",
+        "Challenger"
+      ],
+      "archetype": "Magic Fighter",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_diana.jpg?w=116"
+    },
+    {
+      "id": "ezreal",
+      "name": "Ezreal",
+      "api_name": "TFT17_Ezreal",
+      "cost": 1,
+      "traits": [
+        "Timebreaker",
+        "Sniper"
+      ],
+      "archetype": "Attack Caster",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_ezreal.jpg?w=116"
+    },
+    {
+      "id": "fiora",
+      "name": "Fiora",
+      "api_name": "TFT17_Fiora",
+      "cost": 5,
+      "traits": [
+        "Divine Duelist",
+        "Anima",
+        "Marauder"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_fiora.jpg?w=116"
+    },
+    {
+      "id": "fizz",
+      "name": "Fizz",
+      "api_name": "TFT17_Fizz",
+      "cost": 3,
+      "traits": [
+        "Meeple",
+        "Rogue"
+      ],
+      "archetype": "Magic Assassin",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_fizz.jpg?w=116"
+    },
+    {
+      "id": "gnar",
+      "name": "Gnar",
+      "api_name": "TFT17_Gnar",
+      "cost": 2,
+      "traits": [
+        "Meeple",
+        "Sniper"
+      ],
+      "archetype": "Attack Specialist",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_gnar.jpg?w=116"
+    },
+    {
+      "id": "gragas",
+      "name": "Gragas",
+      "api_name": "TFT17_Gragas",
+      "cost": 2,
+      "traits": [
+        "Psionic",
+        "Brawler"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_gragas.jpg?w=116"
+    },
+    {
+      "id": "graves",
+      "name": "Graves",
+      "api_name": "TFT17_Graves",
+      "cost": 5,
+      "traits": [
+        "Factory New"
+      ],
+      "archetype": "Attack Marksman",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_graves.jpg?w=116"
+    },
+    {
+      "id": "gwen",
+      "name": "Gwen",
+      "api_name": "TFT17_Gwen",
+      "cost": 2,
+      "traits": [
+        "Space Groove",
+        "Rogue"
+      ],
+      "archetype": "Magic Assassin",
+      "damage_profile": "magic",
+      "attack_range": 2,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_gwen.jpg?w=116"
+    },
+    {
+      "id": "illaoi",
+      "name": "Illaoi",
+      "api_name": "TFT17_Illaoi",
+      "cost": 3,
+      "traits": [
+        "Anima",
+        "Vanguard",
+        "Shepherd"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_illaoi.jpg?w=116"
+    },
+    {
+      "id": "jax",
+      "name": "Jax",
+      "api_name": "TFT17_Jax",
+      "cost": 2,
+      "traits": [
+        "Stargazer",
+        "Bastion"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_jax.jpg?w=116"
+    },
+    {
+      "id": "jhin",
+      "name": "Jhin",
+      "api_name": "TFT17_Jhin",
+      "cost": 5,
+      "traits": [
+        "Dark Star",
+        "Eradicator",
+        "Sniper"
+      ],
+      "archetype": "Attack Marksman",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_jhin.jpg?w=116"
+    },
+    {
+      "id": "jinx",
+      "name": "Jinx",
+      "api_name": "TFT17_Jinx",
+      "cost": 2,
+      "traits": [
+        "Anima",
+        "Challenger"
+      ],
+      "archetype": "Attack Marksman",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_jinx.jpg?w=116"
+    },
+    {
+      "id": "kaisa",
+      "name": "Kai'Sa",
+      "api_name": "TFT17_Kaisa",
+      "cost": 3,
+      "traits": [
+        "Dark Star",
+        "Rogue"
+      ],
+      "archetype": "Attack Caster",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_kaisa.jpg?w=116"
+    },
+    {
+      "id": "karma",
+      "name": "Karma",
+      "api_name": "TFT17_Karma",
+      "cost": 4,
+      "traits": [
+        "Dark Star",
+        "Voyager"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_karma.jpg?w=116"
+    },
+    {
+      "id": "kindred",
+      "name": "Kindred",
+      "api_name": "TFT17_Kindred",
+      "cost": 4,
+      "traits": [
+        "N.O.V.A.",
+        "Challenger"
+      ],
+      "archetype": "Attack Marksman",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_kindred.jpg?w=116"
+    },
+    {
+      "id": "leblanc",
+      "name": "LeBlanc",
+      "api_name": "TFT17_Leblanc",
+      "cost": 4,
+      "traits": [
+        "Arbiter",
+        "Shepherd"
+      ],
+      "archetype": "Magic Marksman",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_leblanc.jpg?w=116"
+    },
+    {
+      "id": "leona",
+      "name": "Leona",
+      "api_name": "TFT17_Leona",
+      "cost": 1,
+      "traits": [
+        "Arbiter",
+        "Vanguard"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_leona.jpg?w=116"
+    },
+    {
+      "id": "lissandra",
+      "name": "Lissandra",
+      "api_name": "TFT17_Lissandra",
+      "cost": 1,
+      "traits": [
+        "Dark Star",
+        "Shepherd",
+        "Replicator"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_lissandra.jpg?w=116"
+    },
+    {
+      "id": "lulu",
+      "name": "Lulu",
+      "api_name": "TFT17_Lulu",
+      "cost": 3,
+      "traits": [
+        "Stargazer",
+        "Replicator"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_lulu.jpg?w=116"
+    },
+    {
+      "id": "maokai",
+      "name": "Maokai",
+      "api_name": "TFT17_Maokai",
+      "cost": 3,
+      "traits": [
+        "N.O.V.A.",
+        "Brawler"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_maokai.jpg?w=116"
+    },
+    {
+      "id": "masteryi",
+      "name": "Master Yi",
+      "api_name": "TFT17_MasterYi",
+      "cost": 4,
+      "traits": [
+        "Psionic",
+        "Marauder"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_masteryi.jpg?w=116"
+    },
+    {
+      "id": "meepsie",
+      "name": "Meepsie",
+      "api_name": "TFT17_Meepsie",
+      "cost": 2,
+      "traits": [
+        "Meeple",
+        "Shepherd",
+        "Voyager"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_meepsie.jpg?w=116"
+    },
+    {
+      "id": "milio",
+      "name": "Milio",
+      "api_name": "TFT17_Milio",
+      "cost": 2,
+      "traits": [
+        "Timebreaker",
+        "Fateweaver"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_milio.jpg?w=116"
+    },
+    {
+      "id": "missfortune",
+      "name": "Miss Fortune",
+      "api_name": "TFT17_MissFortune",
+      "cost": 3,
+      "traits": [
+        "Gun Goddess"
+      ],
+      "archetype": "Attack Caster",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_missfortune.jpg?w=116"
+    },
+    {
+      "id": "mordekaiser",
+      "name": "Mordekaiser",
+      "api_name": "TFT17_Mordekaiser",
+      "cost": 2,
+      "traits": [
+        "Dark Star",
+        "Channeler",
+        "Vanguard"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_mordekaiser.jpg?w=116"
+    },
+    {
+      "id": "morgana",
+      "name": "Morgana",
+      "api_name": "TFT17_Morgana",
+      "cost": 5,
+      "traits": [
+        "Dark Lady"
+      ],
+      "archetype": "Magic Fighter",
+      "damage_profile": "magic",
+      "attack_range": 2,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_morgana.jpg?w=116"
+    },
+    {
+      "id": "nami",
+      "name": "Nami",
+      "api_name": "TFT17_Nami",
+      "cost": 4,
+      "traits": [
+        "Space Groove",
+        "Replicator"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_nami.jpg?w=116"
+    },
+    {
+      "id": "nasus",
+      "name": "Nasus",
+      "api_name": "TFT17_Nasus",
+      "cost": 1,
+      "traits": [
+        "Space Groove",
+        "Vanguard"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_nasus.jpg?w=116"
+    },
+    {
+      "id": "nunu",
+      "name": "Nunu",
+      "api_name": "TFT17_Nunu",
+      "cost": 4,
+      "traits": [
+        "Stargazer",
+        "Vanguard"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_nunu.jpg?w=116"
+    },
+    {
+      "id": "ornn",
+      "name": "Ornn",
+      "api_name": "TFT17_Ornn",
+      "cost": 3,
+      "traits": [
+        "Space Groove",
+        "Bastion"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_ornn.jpg?w=116"
+    },
+    {
+      "id": "pantheon",
+      "name": "Pantheon",
+      "api_name": "TFT17_Pantheon",
+      "cost": 2,
+      "traits": [
+        "Timebreaker",
+        "Brawler",
+        "Replicator"
+      ],
+      "archetype": "Attack Tank",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_pantheon.jpg?w=116"
+    },
+    {
+      "id": "poppy",
+      "name": "Poppy",
+      "api_name": "TFT17_Poppy",
+      "cost": 1,
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_poppy.jpg?w=116"
+    },
+    {
+      "id": "pyke",
+      "name": "Pyke",
+      "api_name": "TFT17_Pyke",
+      "cost": 2,
+      "traits": [
+        "Psionic",
+        "Voyager"
+      ],
+      "archetype": "Attack Assassin",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_pyke.jpg?w=116"
+    },
+    {
+      "id": "rammus",
+      "name": "Rammus",
+      "api_name": "TFT17_Rammus",
+      "cost": 4,
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_rammus.jpg?w=116"
+    },
+    {
+      "id": "reksai",
+      "name": "Rek'Sai",
+      "api_name": "TFT17_RekSai",
+      "cost": 1,
+      "traits": [
+        "Primordian",
+        "Brawler"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_reksai.jpg?w=116"
+    },
+    {
+      "id": "rhaast",
+      "name": "Rhaast",
+      "api_name": "TFT17_Rhaast",
+      "cost": 3,
+      "traits": [
+        "Redeemer"
+      ],
+      "archetype": "Attack Tank",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_rhaast.jpg?w=116"
+    },
+    {
+      "id": "riven",
+      "name": "Riven",
+      "api_name": "TFT17_Riven",
+      "cost": 4,
+      "traits": [
+        "Timebreaker",
+        "Rogue"
+      ],
+      "archetype": "Hybrid Fighter",
+      "damage_profile": "hybrid",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_riven.jpg?w=116"
+    },
+    {
+      "id": "samira",
+      "name": "Samira",
+      "api_name": "TFT17_Samira",
+      "cost": 3,
+      "traits": [
+        "Space Groove",
+        "Sniper"
+      ],
+      "archetype": "Attack Caster",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_samira.jpg?w=116"
+    },
+    {
+      "id": "shen",
+      "name": "Shen",
+      "api_name": "TFT17_Shen",
+      "cost": 5,
+      "traits": [
+        "Bulwark",
+        "Bastion"
+      ],
+      "archetype": "Magic Fighter",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_shen.jpg?w=116"
+    },
+    {
+      "id": "sona",
+      "name": "Sona",
+      "api_name": "TFT17_Sona",
+      "cost": 5,
+      "traits": [
+        "Commander",
+        "Psionic",
+        "Shepherd"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_sona.jpg?w=116"
+    },
+    {
+      "id": "tahmkench",
+      "name": "Tahm Kench",
+      "api_name": "TFT17_TahmKench",
+      "cost": 4,
+      "traits": [
+        "Oracle",
+        "Brawler"
+      ],
+      "archetype": "Magic Tank",
+      "damage_profile": "magic",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_tahmkench.jpg?w=116"
+    },
+    {
+      "id": "talon",
+      "name": "Talon",
+      "api_name": "TFT17_Talon",
+      "cost": 1,
+      "traits": [
+        "Stargazer",
+        "Rogue"
+      ],
+      "archetype": "Attack Assassin",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_talon.jpg?w=116"
+    },
+    {
+      "id": "teemo",
+      "name": "Teemo",
+      "api_name": "TFT17_Teemo",
+      "cost": 1,
+      "traits": [
+        "Space Groove",
+        "Shepherd"
+      ],
+      "archetype": "Magic Marksman",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_teemo.jpg?w=116"
+    },
+    {
+      "id": "themightymech",
+      "name": "The Mighty Mech",
+      "api_name": "TFT17_TheMightyMech",
+      "cost": 4,
+      "traits": [
+        "Mecha",
+        "Voyager"
+      ],
+      "archetype": "Attack Tank",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_themightymech.jpg?w=116"
+    },
+    {
+      "id": "twistedfate",
+      "name": "Twisted Fate",
+      "api_name": "TFT17_TwistedFate",
+      "cost": 1,
+      "traits": [
+        "Stargazer",
+        "Fateweaver"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_twistedfate.jpg?w=116"
+    },
+    {
+      "id": "urgot",
+      "name": "Urgot",
+      "api_name": "TFT17_Urgot",
+      "cost": 3,
+      "traits": [
+        "Mecha",
+        "Brawler",
+        "Marauder"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 2,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_urgot.jpg?w=116"
+    },
+    {
+      "id": "veigar",
+      "name": "Veigar",
+      "api_name": "TFT17_Veigar",
+      "cost": 1,
+      "traits": [
+        "Meeple",
+        "Replicator"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_veigar.jpg?w=116"
+    },
+    {
+      "id": "vex",
+      "name": "Vex",
+      "api_name": "TFT17_Vex",
+      "cost": 5,
+      "traits": [
+        "Doomer"
+      ],
+      "archetype": "Magic Marksman",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_vex.jpg?w=116"
+    },
+    {
+      "id": "viktor",
+      "name": "Viktor",
+      "api_name": "TFT17_Viktor",
+      "cost": 3,
+      "traits": [
+        "Psionic",
+        "Channeler"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_viktor.jpg?w=116"
+    },
+    {
+      "id": "xayah",
+      "name": "Xayah",
+      "api_name": "TFT17_Xayah",
+      "cost": 4,
+      "traits": [
+        "Stargazer",
+        "Sniper"
+      ],
+      "archetype": "Attack Marksman",
+      "damage_profile": "attack",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_xayah.jpg?w=116"
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "api_name": "TFT17_Zed",
+      "cost": 5,
+      "traits": [
+        "Galaxy Hunter"
+      ],
+      "archetype": "Attack Fighter",
+      "damage_profile": "attack",
+      "attack_range": 1,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_zed.jpg?w=116"
+    },
+    {
+      "id": "zoe",
+      "name": "Zoe",
+      "api_name": "TFT17_Zoe",
+      "cost": 2,
+      "traits": [
+        "Arbiter",
+        "Channeler"
+      ],
+      "archetype": "Magic Caster",
+      "damage_profile": "magic",
+      "attack_range": 4,
+      "avatar_url": "https://ap.tft.tools/img/new17/face/tft17_zoe.jpg?w=116"
+    }
+  ]
+}
